@@ -25,9 +25,10 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
+      overflow-x: hidden;
     }
 
-    /* Efek kabut biru */
+    /* Efek kabut biru bergerak */
     .bg-glow {
       position: fixed;
       width: 600px;
@@ -54,6 +55,20 @@
       animation: floatGlow 12s ease-in-out infinite alternate-reverse;
     }
 
+    .bg-glow3 {
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.1), transparent 70%);
+      border-radius: 50%;
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 0;
+      filter: blur(120px);
+      animation: floatGlow 8s ease-in-out infinite alternate;
+    }
+
     @keyframes floatGlow {
       0% { transform: translate(0, 0) scale(1); }
       100% { transform: translate(50px, 30px) scale(1.2); }
@@ -62,12 +77,12 @@
     .container {
       max-width: 880px;
       width: 100%;
-      background: rgba(10, 22, 40, 0.7);
+      background: rgba(10, 22, 40, 0.6);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-radius: 40px;
-      border: 1px solid rgba(0, 180, 255, 0.3);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 180, 255, 0.1) inset;
+      border: 1px solid rgba(0, 180, 255, 0.25);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 180, 255, 0.05) inset, 0 0 60px rgba(0, 150, 255, 0.05);
       padding: 2.5rem 2rem;
       z-index: 10;
       position: relative;
@@ -86,9 +101,22 @@
 
     .logo-container {
       position: relative;
-      width: 140px;
-      height: 140px;
+      width: 150px;
+      height: 150px;
       margin: 0 auto 20px;
+    }
+
+    .logo-container::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 45px;
+      padding: 2px;
+      background: linear-gradient(135deg, rgba(0, 200, 255, 0.6), rgba(0, 100, 255, 0.2));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
     }
 
     .logo-container img {
@@ -96,40 +124,66 @@
       height: 100%;
       object-fit: cover;
       border-radius: 40px;
-      border: 2px solid rgba(0, 200, 255, 0.6);
-      box-shadow: 0 0 40px rgba(0, 200, 255, 0.3);
+      border: 2px solid rgba(0, 200, 255, 0.3);
+      box-shadow: 0 0 40px rgba(0, 200, 255, 0.2);
       transition: 0.3s;
     }
 
     .logo-container:hover img {
       transform: scale(1.03);
-      box-shadow: 0 0 60px rgba(0, 200, 255, 0.5);
+      box-shadow: 0 0 60px rgba(0, 200, 255, 0.4);
     }
 
     .judul-home {
       font-family: 'Orbitron', sans-serif;
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       letter-spacing: 4px;
       background: linear-gradient(135deg, #7dd3fc, #38bdf8, #0ea5e9);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       text-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 0.8rem;
+      color: #6a9fc9;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
     }
 
     .motto {
       font-size: 1rem;
       font-style: italic;
       color: #b8d4e6;
-      padding: 20px;
-      border-top: 1px solid rgba(56, 189, 248, 0.2);
-      border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 20px 25px;
+      border: 1px solid rgba(56, 189, 248, 0.15);
       max-width: 600px;
       margin: 20px auto;
-      line-height: 1.7;
+      line-height: 1.8;
+      border-radius: 20px;
       background: rgba(0, 100, 200, 0.05);
-      border-radius: 16px;
+      position: relative;
+    }
+
+    .motto::before {
+      content: '"';
+      font-size: 3rem;
+      color: rgba(56, 189, 248, 0.2);
+      position: absolute;
+      top: -10px;
+      left: 15px;
+    }
+
+    .motto::after {
+      content: '"';
+      font-size: 3rem;
+      color: rgba(56, 189, 248, 0.2);
+      position: absolute;
+      bottom: -30px;
+      right: 15px;
     }
 
     .motto i {
@@ -142,7 +196,7 @@
     }
 
     .admin-section h2 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 600;
       letter-spacing: 2px;
       color: #7dd3fc;
@@ -161,26 +215,26 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       list-style: none;
     }
 
     .admin-list li {
-      background: rgba(0, 80, 160, 0.2);
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      background: rgba(0, 80, 160, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.15);
       padding: 8px 20px;
       border-radius: 40px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 500;
       color: #c7e6ff;
-      transition: 0.2s;
+      transition: 0.3s;
       backdrop-filter: blur(4px);
     }
 
     .admin-list li:hover {
       background: rgba(0, 120, 220, 0.25);
       border-color: #38bdf8;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       box-shadow: 0 6px 20px rgba(0, 150, 255, 0.2);
     }
 
@@ -191,9 +245,9 @@
 
     .tahun-marga {
       font-size: 0.8rem;
-      color: #7aa9c9;
+      color: #5a8aaa;
       margin: 20px 0 25px;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
     }
 
     .btn-primary {
@@ -205,7 +259,7 @@
       padding: 14px 30px;
       border-radius: 60px;
       width: 100%;
-      max-width: 340px;
+      max-width: 380px;
       margin: 10px auto 0;
       cursor: pointer;
       transition: 0.3s;
@@ -219,7 +273,7 @@
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(14, 165, 233, 0.4);
+      box-shadow: 0 10px 35px rgba(14, 165, 233, 0.5);
       background: linear-gradient(135deg, #38bdf8, #0284c7);
     }
 
@@ -227,7 +281,7 @@
       font-size: 1.1rem;
     }
 
-    /* ===== HALAMAN SYARAT & SELECTION ===== */
+    /* ===== HALAMAN LAIN ===== */
     .page {
       display: none;
       animation: fadeUp 0.5s ease-out;
@@ -253,8 +307,8 @@
 
     .header .sub {
       font-size: 0.8rem;
-      background: rgba(0, 80, 160, 0.2);
-      border: 1px solid rgba(56, 189, 248, 0.15);
+      background: rgba(0, 80, 160, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.1);
       padding: 6px 18px;
       border-radius: 40px;
       display: inline-block;
@@ -271,7 +325,7 @@
       align-items: center;
       gap: 10px;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       margin-bottom: 6px;
       color: #bddcee;
     }
@@ -281,40 +335,40 @@
       color: #38bdf8;
     }
 
-    input, textarea, select {
+    input, textarea {
       width: 100%;
       padding: 12px 16px;
-      background: rgba(0, 20, 50, 0.6);
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      background: rgba(0, 20, 50, 0.5);
+      border: 1px solid rgba(56, 189, 248, 0.15);
       border-radius: 16px;
       color: #e5f3ff;
       font-size: 0.95rem;
       outline: none;
-      transition: 0.2s;
+      transition: 0.3s;
       font-family: 'Poppins', sans-serif;
       backdrop-filter: blur(4px);
     }
 
-    input:focus, textarea:focus, select:focus {
+    input:focus, textarea:focus {
       border-color: #38bdf8;
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
-      background: rgba(0, 30, 70, 0.7);
+      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
+      background: rgba(0, 30, 70, 0.6);
     }
 
     .checkbox-group {
       display: flex;
       align-items: center;
       gap: 14px;
-      background: rgba(0, 40, 90, 0.2);
-      border: 1px solid rgba(56, 189, 248, 0.1);
+      background: rgba(0, 40, 90, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.08);
       border-radius: 16px;
       padding: 12px 18px;
       margin: 12px 0;
-      transition: 0.2s;
+      transition: 0.3s;
     }
 
     .checkbox-group:hover {
-      border-color: rgba(56, 189, 248, 0.3);
+      border-color: rgba(56, 189, 248, 0.25);
     }
 
     .checkbox-group input[type="checkbox"] {
@@ -329,8 +383,8 @@
     }
 
     .syarat-box {
-      background: rgba(0, 40, 90, 0.25);
-      border: 1px solid rgba(56, 189, 248, 0.15);
+      background: rgba(0, 40, 90, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.1);
       border-radius: 24px;
       padding: 22px;
       margin: 20px 0;
@@ -365,13 +419,13 @@
       color: #7dd3fc;
       text-align: center;
       margin: 8px 0;
-      border: 1px dashed rgba(56, 189, 248, 0.2);
+      border: 1px dashed rgba(56, 189, 248, 0.15);
     }
 
     .tagar {
-      background: rgba(14, 165, 233, 0.15);
+      background: rgba(14, 165, 233, 0.12);
       color: #7dd3fc;
-      padding: 4px 12px;
+      padding: 4px 14px;
       border-radius: 20px;
       font-size: 0.8rem;
       font-weight: 600;
@@ -384,9 +438,9 @@
       text-align: center;
       margin-top: 18px;
       font-size: 0.8rem;
-      color: #6a9fc9;
+      color: #5a8aaa;
       cursor: pointer;
-      transition: 0.2s;
+      transition: 0.3s;
     }
 
     .back-link:hover {
@@ -398,18 +452,23 @@
       text-align: center;
       margin-top: 30px;
       font-size: 0.65rem;
-      color: #3a6a8a;
+      color: #2a5a7a;
       border-top: 1px solid rgba(56, 189, 248, 0.05);
       padding-top: 20px;
+      letter-spacing: 1px;
+    }
+
+    .credit i {
+      color: #38bdf8;
     }
 
     .double-option {
       display: flex;
       gap: 20px;
-      background: rgba(0, 30, 60, 0.3);
+      background: rgba(0, 30, 60, 0.2);
       padding: 10px 16px;
       border-radius: 40px;
-      border: 1px solid rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.08);
       flex-wrap: wrap;
     }
 
@@ -419,11 +478,12 @@
       gap: 6px;
       cursor: pointer;
       margin: 0;
+      font-weight: 400;
     }
 
     .btn-secondary {
-      background: rgba(14, 165, 233, 0.15);
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      background: rgba(14, 165, 233, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.15);
       color: white;
       font-weight: 600;
       font-size: 1rem;
@@ -435,10 +495,11 @@
       margin-top: 16px;
     }
 
-    .btn-secondary:hover {
+    .btn-secondary:hover:not(:disabled) {
       background: rgba(14, 165, 233, 0.25);
       border-color: #38bdf8;
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(14, 165, 233, 0.15);
     }
 
     .btn-secondary:disabled {
@@ -471,7 +532,7 @@
     .loading-spinner {
       width: 50px;
       height: 50px;
-      border: 3px solid rgba(56, 189, 248, 0.1);
+      border: 3px solid rgba(56, 189, 248, 0.08);
       border-top: 3px solid #38bdf8;
       border-radius: 50%;
       animation: spin 1s linear infinite;
@@ -490,15 +551,16 @@
 
     .loading-sub {
       font-size: 0.8rem;
-      color: #5a8aaa;
+      color: #4a7a9a;
       margin-top: 10px;
     }
 
     @media (max-width: 600px) {
       .container { padding: 1.5rem 1.2rem; }
       .judul-home { font-size: 1.7rem; }
-      .logo-container { width: 110px; height: 110px; }
+      .logo-container { width: 120px; height: 120px; }
       .admin-list li { font-size: 0.75rem; padding: 6px 14px; }
+      .motto { font-size: 0.9rem; padding: 15px; }
     }
   </style>
 </head>
@@ -506,6 +568,7 @@
 
 <div class="bg-glow"></div>
 <div class="bg-glow2"></div>
+<div class="bg-glow3"></div>
 
 <div class="container">
 
@@ -513,9 +576,10 @@
   <div id="homePage" class="page active">
     <div class="home-content">
       <div class="logo-container">
-        <img src="logoxnr.jpg" alt="XNR" onerror="this.src='https://placehold.co/140x140/0a1a3a/38bdf8?text=XNR'">
+        <img src="logoxnr.png" alt="XNR" onerror="this.src='https://placehold.co/150x150/0a1a3a/38bdf8?text=XNR'">
       </div>
-      <div class="judul-home">✦ XNR SELECTION ✦</div>
+      <div class="subtitle">✦ Official Selection ✦</div>
+      <div class="judul-home">XNR SELECTION</div>
       <div class="motto">
         <i class="fas fa-water"></i>
         "Bersama XNR, kita wujudkan mimpi dan raih prestasi. Solidaritas tanpa batas, loyalitas sejati."
@@ -554,13 +618,13 @@
         <p><i class="fas fa-user-tag"></i> <strong>1. Format Nama TikTok</strong></p>
         <p>Nama TikTok kamu HARUS mengandung salah satu format berikut:</p>
         <div class="nama-contoh">✦ —𝑵𝒂𝒎𝒂 𝒇𝒕 𝑿𝑵𝑹<br>✦ —𝑵𝒂𝒎𝒂𝑿𝑵𝑹</div>
-        <p style="font-size:0.8rem; color:#7aa9c9;">Contoh: —𝐊𝐲𝐲𝐲𝐲 𝐟𝐭 𝐗𝐍𝐑 atau —𝐊𝐲𝐲𝐲𝐲𝐗𝐍𝐑</p>
+        <p style="font-size:0.8rem; color:#6a8aaa;">Contoh: —𝐊𝐲𝐲𝐲𝐲 𝐟𝐭 𝐗𝐍𝐑 atau —𝐊𝐲𝐲𝐲𝐲𝐗𝐍𝐑</p>
       </div>
       <div class="syarat-item">
         <p><i class="fas fa-hashtag"></i> <strong>2. Posting Video</strong></p>
         <p>Wajib membuat 1 video dengan hashtag:</p>
         <div><span class="tagar">#margaxnr</span></div>
-        <p style="font-size:0.8rem; color:#7aa9c9;">Video bebas kontennya, yang penting pakai tagar #margaxnr!</p>
+        <p style="font-size:0.8rem; color:#6a8aaa;">Video bebas kontennya, yang penting pakai tagar #margaxnr!</p>
       </div>
     </div>
 
@@ -624,7 +688,7 @@
     </div>
     <div class="form-group">
       <label><i class="fab fa-tiktok"></i> Username TikTok</label>
-      <input type="text" id="tiktokFinal" readonly style="background:rgba(0,30,60,0.4); color:#7dd3fc; border:1px solid rgba(56,189,248,0.1);">
+      <input type="text" id="tiktokFinal" readonly style="background:rgba(0,30,60,0.3); color:#7dd3fc; border:1px solid rgba(56,189,248,0.08); border-radius:16px; padding:12px 16px; width:100%;">
     </div>
 
     <button class="btn-primary" id="btnSeleksi">
@@ -669,43 +733,4 @@
     btn.disabled = !(tiktok && cekNama && cekPosting);
   }
 
-  document.getElementById('tiktokUsername').addEventListener('input', updateVerifikasiBtn);
-  document.getElementById('checkNama').addEventListener('change', updateVerifikasiBtn);
-  document.getElementById('checkPosting').addEventListener('change', updateVerifikasiBtn);
-
-  function verifikasi() {
-    tiktokUsername = document.getElementById('tiktokUsername').value.trim();
-    if (!tiktokUsername) return alert("Masukkan username TikTok!");
-    document.getElementById('tiktokFinal').value = tiktokUsername;
-    alert("✅ Verifikasi berhasil! Silakan lanjutkan pendaftaran.");
-    showPage('selectionPage');
-  }
-
-  // ===== AUDIO =====
-  const bgAudio = document.getElementById('bgAudio');
-  let musicStarted = false;
-  function startMusic() {
-    if (!musicStarted && bgAudio) {
-      bgAudio.volume = 0.2;
-      bgAudio.play().then(() => musicStarted = true).catch(() => {});
-    }
-  }
-  document.addEventListener('click', startMusic, { once: true });
-
-  // ===== LOADING =====
-  function showLoading() {
-    document.getElementById('loadingOverlay').classList.add('show');
-  }
-  function hideLoading() {
-    document.getElementById('loadingOverlay').classList.remove('show');
-  }
-
-  // ===== KIRIM TELEGRAM =====
-  async function sendToTelegram(data) {
-    const msg = `🌊 XNR SELECTION 🌊\n\n👤 Nama: ${data.nama}\n🎂 Umur: ${data.umur}\n🏯 Marga Sebelum XNR: ${data.margaAsal}\n🔗 Double Marga: ${data.doubleStatus}\n🌍 Asal: ${data.asal}\n📜 Alasan: ${data.alasan}\n📱 TikTok: ${data.tiktok}`;
-    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-    try {
-      await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ch
+  document.getElementById('tiktokUsername').addEventListener('in
