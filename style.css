@@ -342,6 +342,7 @@ textarea:focus {
   border: 1px solid rgba(56, 189, 248, 0.1);
 }
 
+/* ===== TOMBOL KEMBALI KE SYARAT (SUDAH FIXED CENTER) ===== */
 .back-link {
   text-align: center;
   margin-top: 18px;
@@ -349,6 +350,9 @@ textarea:focus {
   color: #5a8aaa;
   cursor: pointer;
   transition: 0.2s;
+  display: block;
+  width: 100%;
+  padding: 8px 0;
 }
 
 .back-link:hover {
@@ -455,4 +459,4 @@ textarea:focus {
     font-size: 0.9rem;
     padding: 12px;
   }
-}
+  }
