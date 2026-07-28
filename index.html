@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>🌊 XNR SELECTION | Official</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at 20% 30%, #0a1628, #020812);
+      color: #e0f2fe;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    /* Efek kabut biru */
+    .bg-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 150, 255, 0.15), transparent 70%);
+      border-radius: 50%;
+      top: -100px;
+      right: -200px;
+      z-index: 0;
+      filter: blur(80px);
+      animation: floatGlow 10s ease-in-out infinite alternate;
+    }
+
+    .bg-glow2 {
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0, 255, 255, 0.08), transparent 70%);
+      border-radius: 50%;
+      bottom: -100px;
+      left: -150px;
+      z-index: 0;
+      filter: blur(100px);
+      animation: floatGlow 12s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes floatGlow {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(50px, 30px) scale(1.2); }
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      background: rgba(10, 22, 40, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 40px;
+      border: 1px solid rgba(0, 180, 255, 0.3);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 180, 255, 0.1) inset;
+      padding: 2.5rem 2rem;
+      z-index: 10;
+      position: relative;
+      animation: fadeUp 0.8s ease-out;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== HOME ===== */
+    .home-content {
+      text-align: center;
+    }
+
+    .logo-container {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 20px;
+    }
+
+    .logo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 40px;
+      border: 2px solid rgba(0, 200, 255, 0.6);
+      box-shadow: 0 0 40px rgba(0, 200, 255, 0.3);
+      transition: 0.3s;
+    }
+
+    .logo-container:hover img {
+      transform: scale(1.03);
+      box-shadow: 0 0 60px rgba(0, 200, 255, 0.5);
+    }
+
+    .judul-home {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 4px;
+      background: linear-gradient(135deg, #7dd3fc, #38bdf8, #0ea5e9);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+      margin-bottom: 10px;
+    }
+
+    .motto {
+      font-size: 1rem;
+      font-style: italic;
+      color: #b8d4e6;
+      padding: 20px;
+      border-top: 1px solid rgba(56, 189, 248, 0.2);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+      max-width: 600px;
+      margin: 20px auto;
+      line-height: 1.7;
+      background: rgba(0, 100, 200, 0.05);
+      border-radius: 16px;
+    }
+
+    .motto i {
+      color: #38bdf8;
+      margin: 0 6px;
+    }
+
+    .admin-section {
+      margin: 30px 0 20px;
+    }
+
+    .admin-section h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #7dd3fc;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .admin-section h2 i {
+      color: #38bdf8;
+    }
+
+    .admin-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .admin-list li {
+      background: rgba(0, 80, 160, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #c7e6ff;
+      transition: 0.2s;
+      backdrop-filter: blur(4px);
+    }
+
+    .admin-list li:hover {
+      background: rgba(0, 120, 220, 0.25);
+      border-color: #38bdf8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 150, 255, 0.2);
+    }
+
+    .admin-list li i {
+      margin-right: 8px;
+      color: #38bdf8;
+    }
+
+    .tahun-marga {
+      font-size: 0.8rem;
+      color: #7aa9c9;
+      margin: 20px 0 25px;
+      letter-spacing: 2px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      border: none;
+      color: white;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 14px 30px;
+      border-radius: 60px;
+      width: 100%;
+      max-width: 340px;
+      margin: 10px auto 0;
+      cursor: pointer;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(14, 165, 233, 0.4);
+      background: linear-gradient(135deg, #38bdf8, #0284c7);
+    }
+
+    .btn-primary i {
+      font-size: 1.1rem;
+    }
+
+    /* ===== HALAMAN SYARAT & SELECTION ===== */
+    .page {
+      display: none;
+      animation: fadeUp 0.5s ease-out;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #7dd3fc, #0ea5e9);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .header .sub {
+      font-size: 0.8rem;
+      background: rgba(0, 80, 160, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      padding: 6px 18px;
+      border-radius: 40px;
+      display: inline-block;
+      margin-top: 12px;
+      color: #b0d4ee;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: #bddcee;
+    }
+
+    .form-group label i {
+      width: 22px;
+      color: #38bdf8;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(0, 20, 50, 0.6);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 16px;
+      color: #e5f3ff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: 0.2s;
+      font-family: 'Poppins', sans-serif;
+      backdrop-filter: blur(4px);
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+      background: rgba(0, 30, 70, 0.7);
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(0, 40, 90, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.1);
+      border-radius: 16px;
+      padding: 12px 18px;
+      margin: 12px 0;
+      transition: 0.2s;
+    }
+
+    .checkbox-group:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: #0ea5e9;
+    }
+
+    .checkbox-group label {
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .syarat-box {
+      background: rgba(0, 40, 90, 0.25);
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      border-radius: 24px;
+      padding: 22px;
+      margin: 20px 0;
+    }
+
+    .syarat-box h3 {
+      color: #7dd3fc;
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+    }
+
+    .syarat-item {
+      background: rgba(0, 20, 50, 0.3);
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin: 12px 0;
+      border-left: 3px solid #0ea5e9;
+    }
+
+    .syarat-item i {
+      color: #38bdf8;
+      margin-right: 8px;
+    }
+
+    .nama-contoh {
+      background: rgba(0, 80, 160, 0.15);
+      padding: 10px;
+      border-radius: 12px;
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: #7dd3fc;
+      text-align: center;
+      margin: 8px 0;
+      border: 1px dashed rgba(56, 189, 248, 0.2);
+    }
+
+    .tagar {
+      background: rgba(14, 165, 233, 0.15);
+      color: #7dd3fc;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-block;
+      margin: 4px 4px 0 0;
+      border: 1px solid rgba(56, 189, 248, 0.1);
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: #6a9fc9;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .back-link:hover {
+      color: #7dd3fc;
+      letter-spacing: 0.5px;
+    }
+
+    .credit {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.65rem;
+      color: #3a6a8a;
+      border-top: 1px solid rgba(56, 189, 248, 0.05);
+      padding-top: 20px;
+    }
+
+    .double-option {
+      display: flex;
+      gap: 20px;
+      background: rgba(0, 30, 60, 0.3);
+      padding: 10px 16px;
+      border-radius: 40px;
+      border: 1px solid rgba(56, 189, 248, 0.1);
+      flex-wrap: wrap;
+    }
+
+    .double-option label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    .btn-secondary {
+      background: rgba(14, 165, 233, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 24px;
+      border-radius: 60px;
+      width: 100%;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 16px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(14, 165, 233, 0.25);
+      border-color: #38bdf8;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Loading overlay */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(2, 8, 18, 0.95);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 999;
+      display: none;
+    }
+
+    .loading-overlay.show {
+      display: flex;
+    }
+
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(56, 189, 248, 0.1);
+      border-top: 3px solid #38bdf8;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      font-size: 1.1rem;
+      color: #b0d4ee;
+      letter-spacing: 2px;
+    }
+
+    .loading-sub {
+      font-size: 0.8rem;
+      color: #5a8aaa;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1.5rem 1.2rem; }
+      .judul-home { font-size: 1.7rem; }
+      .logo-container { width: 110px; height: 110px; }
+      .admin-list li { font-size: 0.75rem; padding: 6px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+<div class="bg-glow2"></div>
+
+<div class="container">
+
+  <!-- HOME -->
+  <div id="homePage" class="page active">
+    <div class="home-content">
+      <div class="logo-container">
+        <img src="logoxnr.jpg" alt="XNR" onerror="this.src='https://placehold.co/140x140/0a1a3a/38bdf8?text=XNR'">
+      </div>
+      <div class="judul-home">✦ XNR SELECTION ✦</div>
+      <div class="motto">
+        <i class="fas fa-water"></i>
+        "Bersama XNR, kita wujudkan mimpi dan raih prestasi. Solidaritas tanpa batas, loyalitas sejati."
+        <i class="fas fa-water"></i>
+      </div>
+      <div class="admin-section">
+        <h2><i class="fas fa-users"></i> ADMIN MARGA XNR</h2>
+        <ul class="admin-list">
+          <li><i class="fas fa-crown"></i> KAYEYE</li>
+          <li><i class="fas fa-dragon"></i> RASYID</li>
+          <li><i class="fas fa-bolt"></i> VOLTAR</li>
+          <li><i class="fas fa-shield-alt"></i> REYZ</li>
+          <li><i class="fas fa-star"></i> KINAN</li>
+          <li><i class="fas fa-fire"></i> MARVEL</li>
+          <li><i class="fas fa-feather-alt"></i> FANZ</li>
+          <li><i class="fas fa-skull"></i> RAUL</li>
+        </ul>
+      </div>
+      <div class="tahun-marga"><i class="fas fa-calendar-alt"></i> BERDIRI SEJAK 2024</div>
+      <button class="btn-primary" onclick="showPage('syaratPage')">
+        <i class="fas fa-arrow-right"></i> LANJUTKAN PENDAFTARAN
+      </button>
+    </div>
+  </div>
+
+  <!-- SYARAT -->
+  <div id="syaratPage" class="page">
+    <div class="header">
+      <h1><i class="fas fa-clipboard-list"></i> SYARAT MASUK XNR</h1>
+      <div class="sub"><i class="fab fa-tiktok"></i> Verifikasi TikTok</div>
+    </div>
+
+    <div class="syarat-box">
+      <h3><i class="fas fa-pen-fancy"></i> 📌 Persyaratan Wajib</h3>
+      <div class="syarat-item">
+        <p><i class="fas fa-user-tag"></i> <strong>1. Format Nama TikTok</strong></p>
+        <p>Nama TikTok kamu HARUS mengandung salah satu format berikut:</p>
+        <div class="nama-contoh">✦ —𝑵𝒂𝒎𝒂 𝒇𝒕 𝑿𝑵𝑹<br>✦ —𝑵𝒂𝒎𝒂𝑿𝑵𝑹</div>
+        <p style="font-size:0.8rem; color:#7aa9c9;">Contoh: —𝐊𝐲𝐲𝐲𝐲 𝐟𝐭 𝐗𝐍𝐑 atau —𝐊𝐲𝐲𝐲𝐲𝐗𝐍𝐑</p>
+      </div>
+      <div class="syarat-item">
+        <p><i class="fas fa-hashtag"></i> <strong>2. Posting Video</strong></p>
+        <p>Wajib membuat 1 video dengan hashtag:</p>
+        <div><span class="tagar">#margaxnr</span></div>
+        <p style="font-size:0.8rem; color:#7aa9c9;">Video bebas kontennya, yang penting pakai tagar #margaxnr!</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label><i class="fab fa-tiktok"></i> Username TikTok Kamu</label>
+      <input type="text" id="tiktokUsername" placeholder="@usernamekamu">
+    </div>
+
+    <div class="checkbox-group">
+      <input type="checkbox" id="checkNama">
+      <label>✅ Saya sudah mengubah nama TikTok sesuai format XNR</label>
+    </div>
+    <div class="checkbox-group">
+      <input type="checkbox" id="checkPosting">
+      <label>✅ Saya sudah posting video dengan tagar #margaxnr</label>
+    </div>
+
+    <button class="btn-secondary" id="verifikasiBtn" disabled onclick="verifikasi()">
+      <i class="fas fa-check-circle"></i> VERIFIKASI & LANJUTKAN
+    </button>
+
+    <div class="back-link" onclick="showPage('homePage')">
+      <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+    </div>
+    <div class="credit"><i class="fas fa-copyright"></i> 2025 • XNR Selection</div>
+  </div>
+
+  <!-- SELECTION -->
+  <div id="selectionPage" class="page">
+    <div class="header">
+      <h1><i class="fas fa-water"></i> XNR SELECTION</h1>
+      <div class="sub"><i class="fas fa-bolt"></i> Daftar Sekarang</div>
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-user-ninja"></i> 1. Nama Lengkap</label>
+      <input type="text" id="nama" placeholder="ex: Arka Veyron">
+    </div>
+    <div class="form-group">
+      <label><i class="fas fa-calendar-alt"></i> 2. Umur</label>
+      <input type="text" id="umur" placeholder="19 / 22 / 27">
+    </div>
+    <div class="form-group">
+      <label><i class="fas fa-fist-raised"></i> 3. Alasan Masuk XNR</label>
+      <textarea id="alasan" rows="2" placeholder="Cari kekuatan, membangun kolaborasi..."></textarea>
+    </div>
+    <div class="form-group">
+      <label><i class="fas fa-link"></i> 4. Double Marga ?</label>
+      <div class="double-option">
+        <label><input type="radio" name="doubleMarga" value="yes"> Ya, Double Marga</label>
+        <label><input type="radio" name="doubleMarga" value="no" checked> Tidak</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label><i class="fas fa-tree"></i> 5. Marga Sebelum XNR</label>
+      <input type="text" id="margaAsal" placeholder="Contoh: kgn, nca, wangy">
+    </div>
+    <div class="form-group">
+      <label><i class="fas fa-map-marker-alt"></i> 6. Asal Daerah</label>
+      <input type="text" id="asal" placeholder="Contoh: Jawa Barat, Jawa Tengah">
+    </div>
+    <div class="form-group">
+      <label><i class="fab fa-tiktok"></i> Username TikTok</label>
+      <input type="text" id="tiktokFinal" readonly style="background:rgba(0,30,60,0.4); color:#7dd3fc; border:1px solid rgba(56,189,248,0.1);">
+    </div>
+
+    <button class="btn-primary" id="btnSeleksi">
+      <i class="fas fa-paper-plane"></i> DAFTAR SEKARANG
+    </button>
+
+    <div class="back-link" onclick="showPage('syaratPage')">
+      <i class="fas fa-arrow-left"></i> Kembali ke Syarat
+    </div>
+    <div class="credit"><i class="fas fa-copyright"></i> 2025 • XNR Selection</div>
+  </div>
+
+</div>
+
+<!-- LOADING -->
+<div id="loadingOverlay" class="loading-overlay">
+  <div class="loading-spinner"></div>
+  <div class="loading-text">⚡ SABAR, DATA SEDANG DIPROSES</div>
+  <div class="loading-sub">harap tunggu sebentar...</div>
+</div>
+
+<script>
+  // ===== KONFIGURASI XNR =====
+  const BOT_TOKEN = "8522490884:AAHM_R45nqpI1p-d7ifrzyPI9p_qYt2A9b8";
+  const CHAT_ID = "7509845641";
+  const LINK_GRUP_WA = "https://chat.whatsapp.com/Buwkd7S2Pxm6xDgTuQGtNi";
+
+  let tiktokUsername = "";
+
+  // ===== NAVIGASI =====
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+  }
+
+  // ===== VERIFIKASI =====
+  function updateVerifikasiBtn() {
+    const tiktok = document.getElementById('tiktokUsername').value.trim();
+    const cekNama = document.getElementById('checkNama').checked;
+    const cekPosting = document.getElementById('checkPosting').checked;
+    const btn = document.getElementById('verifikasiBtn');
+    btn.disabled = !(tiktok && cekNama && cekPosting);
+  }
+
+  document.getElementById('tiktokUsername').addEventListener('input', updateVerifikasiBtn);
+  document.getElementById('checkNama').addEventListener('change', updateVerifikasiBtn);
+  document.getElementById('checkPosting').addEventListener('change', updateVerifikasiBtn);
+
+  function verifikasi() {
+    tiktokUsername = document.getElementById('tiktokUsername').value.trim();
+    if (!tiktokUsername) return alert("Masukkan username TikTok!");
+    document.getElementById('tiktokFinal').value = tiktokUsername;
+    alert("✅ Verifikasi berhasil! Silakan lanjutkan pendaftaran.");
+    showPage('selectionPage');
+  }
+
+  // ===== AUDIO =====
+  const bgAudio = document.getElementById('bgAudio');
+  let musicStarted = false;
+  function startMusic() {
+    if (!musicStarted && bgAudio) {
+      bgAudio.volume = 0.2;
+      bgAudio.play().then(() => musicStarted = true).catch(() => {});
+    }
+  }
+  document.addEventListener('click', startMusic, { once: true });
+
+  // ===== LOADING =====
+  function showLoading() {
+    document.getElementById('loadingOverlay').classList.add('show');
+  }
+  function hideLoading() {
+    document.getElementById('loadingOverlay').classList.remove('show');
+  }
+
+  // ===== KIRIM TELEGRAM =====
+  async function sendToTelegram(data) {
+    const msg = `🌊 XNR SELECTION 🌊\n\n👤 Nama: ${data.nama}\n🎂 Umur: ${data.umur}\n🏯 Marga Sebelum XNR: ${data.margaAsal}\n🔗 Double Marga: ${data.doubleStatus}\n🌍 Asal: ${data.asal}\n📜 Alasan: ${data.alasan}\n📱 TikTok: ${data.tiktok}`;
+    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+    try {
+      await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ch
