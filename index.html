@@ -635,13 +635,16 @@
 
   let tiktokUsername = "";
 
-  // ===== NAVIGASI (PAKAI FUNGSI GLOBAL) =====
+  // ===== NAVIGASI =====
   function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(function(p) {
-      p.classList.remove('active');
-    });
+    var pages = document.querySelectorAll('.page');
+    for (var i = 0; i < pages.length; i++) {
+      pages[i].classList.remove('active');
+    }
     var target = document.getElementById(pageId);
-    if (target) target.classList.add('active');
+    if (target) {
+      target.classList.add('active');
+    }
   }
 
   // ===== VERIFIKASI =====
@@ -650,7 +653,11 @@
     var cekNama = document.getElementById('checkNama').checked;
     var cekPosting = document.getElementById('checkPosting').checked;
     var btn = document.getElementById('verifikasiBtn');
-    btn.disabled = !(tiktok && cekNama && cekPosting);
+    if (tiktok !== "" && cekNama && cekPosting) {
+      btn.disabled = false;
+    } else {
+      btn.disabled = true;
+    }
   }
 
   document.getElementById('tiktokUsername').addEventListener('input', updateVerifikasiBtn);
@@ -659,6 +666,5 @@
 
   function verifikasi() {
     tiktokUsername = document.getElementById('tiktokUsername').value.trim();
-    if (!tiktokUsername) return alert("Masukkan username TikTok!");
-    document.getElementById('tiktokFinal').value = tiktokUsername;
-    alert("✅ Verifikasi berhasil! S
+    if (tiktokUsername === "") {
+      alert("Masukkan username TikT
