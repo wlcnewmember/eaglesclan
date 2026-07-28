@@ -1,0 +1,458 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0b1a30, #041221);
+  color: #e0f2fe;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 880px;
+  width: 100%;
+  background: rgba(10, 22, 40, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 32px;
+  border: 1px solid rgba(0, 180, 255, 0.2);
+  padding: 2.5rem 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.page {
+  display: none;
+  animation: fade 0.4s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-content {
+  text-align: center;
+}
+
+.logo-container {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 20px;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 2px solid #0ea5e9;
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.2);
+}
+
+.logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.judul-home {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #7dd3fc;
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  color: #6a9fc9;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.motto {
+  font-size: 1rem;
+  font-style: italic;
+  color: #b8d4e6;
+  padding: 16px 20px;
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 16px;
+  background: rgba(0, 100, 200, 0.05);
+}
+
+.motto i {
+  color: #38bdf8;
+  margin: 0 6px;
+}
+
+.admin-section {
+  margin: 30px 0 20px;
+}
+
+.admin-section h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #7dd3fc;
+  margin-bottom: 18px;
+}
+
+.admin-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+}
+
+.admin-list li {
+  background: rgba(0, 80, 160, 0.2);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  padding: 8px 20px;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #c7e6ff;
+  transition: 0.2s;
+}
+
+.admin-list li:hover {
+  background: rgba(0, 120, 220, 0.3);
+  border-color: #38bdf8;
+}
+
+.admin-list li i {
+  margin-right: 8px;
+  color: #38bdf8;
+}
+
+.tahun-marga {
+  font-size: 0.8rem;
+  color: #5a8aaa;
+  margin: 20px 0 25px;
+  letter-spacing: 3px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 14px 30px;
+  border-radius: 60px;
+  width: 100%;
+  max-width: 380px;
+  margin: 10px auto 0;
+  cursor: pointer;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.5);
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
+}
+
+.btn-secondary {
+  background: rgba(14, 165, 233, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 14px 24px;
+  border-radius: 60px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 16px;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(14, 165, 233, 0.3);
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #7dd3fc;
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+.header .sub {
+  font-size: 0.75rem;
+  background: rgba(0, 80, 160, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  padding: 6px 18px;
+  border-radius: 40px;
+  display: inline-block;
+  margin-top: 12px;
+  color: #b0d4ee;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: #bddcee;
+}
+
+.form-group label i {
+  width: 22px;
+  color: #38bdf8;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(0, 20, 50, 0.5);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 16px;
+  color: #e5f3ff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.2s;
+  font-family: 'Poppins', sans-serif;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+  background: rgba(0, 30, 70, 0.5);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(0, 40, 90, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.08);
+  border-radius: 16px;
+  padding: 12px 18px;
+  margin: 12px 0;
+  transition: 0.2s;
+}
+
+.checkbox-group:hover {
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #0ea5e9;
+}
+
+.checkbox-group label {
+  margin: 0;
+  cursor: pointer;
+}
+
+.syarat-box {
+  background: rgba(0, 40, 90, 0.2);
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  border-radius: 20px;
+  padding: 22px;
+  margin: 20px 0;
+}
+
+.syarat-box h3 {
+  color: #7dd3fc;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.syarat-item {
+  background: rgba(0, 20, 50, 0.3);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin: 12px 0;
+  border-left: 3px solid #0ea5e9;
+}
+
+.syarat-item i {
+  color: #38bdf8;
+  margin-right: 8px;
+}
+
+.nama-contoh {
+  background: rgba(0, 80, 160, 0.15);
+  padding: 10px;
+  border-radius: 12px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #7dd3fc;
+  text-align: center;
+  margin: 8px 0;
+  border: 1px dashed rgba(56, 189, 248, 0.15);
+}
+
+.tagar {
+  background: rgba(14, 165, 233, 0.12);
+  color: #7dd3fc;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  margin: 4px 4px 0 0;
+  border: 1px solid rgba(56, 189, 248, 0.1);
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 0.8rem;
+  color: #5a8aaa;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.back-link:hover {
+  color: #7dd3fc;
+  letter-spacing: 0.5px;
+}
+
+.double-option {
+  display: flex;
+  gap: 20px;
+  background: rgba(0, 30, 60, 0.2);
+  padding: 10px 16px;
+  border-radius: 40px;
+  border: 1px solid rgba(56, 189, 248, 0.08);
+  flex-wrap: wrap;
+}
+
+.double-option label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  margin: 0;
+  font-weight: 400;
+}
+
+.credit {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.65rem;
+  color: #2a5a7a;
+  border-top: 1px solid rgba(56, 189, 248, 0.05);
+  padding-top: 20px;
+  letter-spacing: 1px;
+}
+
+.credit i {
+  color: #38bdf8;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(2, 8, 18, 0.95);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.loading-overlay.show {
+  display: flex;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(56, 189, 248, 0.08);
+  border-top: 3px solid #38bdf8;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  font-size: 1.1rem;
+  color: #b0d4ee;
+  letter-spacing: 2px;
+}
+
+.loading-sub {
+  font-size: 0.8rem;
+  color: #4a7a9a;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem 1.2rem;
+  }
+  .judul-home {
+    font-size: 1.6rem;
+  }
+  .logo-container {
+    width: 100px;
+    height: 100px;
+  }
+  .admin-list li {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+  .motto {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+}
