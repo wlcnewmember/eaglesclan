@@ -10,11 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -28,7 +24,6 @@
       overflow-x: hidden;
     }
 
-    /* Efek kabut biru */
     .bg-glow {
       position: fixed;
       width: 600px;
@@ -79,7 +74,6 @@
       width: 100%;
       background: rgba(10, 22, 40, 0.6);
       backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
       border-radius: 40px;
       border: 1px solid rgba(0, 180, 255, 0.25);
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 180, 255, 0.05) inset, 0 0 60px rgba(0, 150, 255, 0.05);
@@ -94,10 +88,10 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ===== HOME ===== */
-    .home-content {
-      text-align: center;
-    }
+    .page { display: none; animation: fadeUp 0.5s ease-out; }
+    .page.active { display: block; }
+
+    .home-content { text-align: center; }
 
     .logo-container {
       position: relative;
@@ -186,15 +180,9 @@
       right: 15px;
     }
 
-    .motto i {
-      color: #38bdf8;
-      margin: 0 6px;
-    }
+    .motto i { color: #38bdf8; margin: 0 6px; }
 
-    .admin-section {
-      margin: 30px 0 20px;
-    }
-
+    .admin-section { margin: 30px 0 20px; }
     .admin-section h2 {
       font-size: 1.1rem;
       font-weight: 600;
@@ -206,10 +194,7 @@
       justify-content: center;
       gap: 10px;
     }
-
-    .admin-section h2 i {
-      color: #38bdf8;
-    }
+    .admin-section h2 i { color: #38bdf8; }
 
     .admin-list {
       display: flex;
@@ -238,10 +223,7 @@
       box-shadow: 0 6px 20px rgba(0, 150, 255, 0.2);
     }
 
-    .admin-list li i {
-      margin-right: 8px;
-      color: #38bdf8;
-    }
+    .admin-list li i { margin-right: 8px; color: #38bdf8; }
 
     .tahun-marga {
       font-size: 0.8rem;
@@ -277,25 +259,30 @@
       background: linear-gradient(135deg, #38bdf8, #0284c7);
     }
 
-    .btn-primary i {
-      font-size: 1.1rem;
+    .btn-secondary {
+      background: rgba(14, 165, 233, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 24px;
+      border-radius: 60px;
+      width: 100%;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 16px;
     }
 
-    /* ===== HALAMAN LAIN ===== */
-    .page {
-      display: none;
-      animation: fadeUp 0.5s ease-out;
+    .btn-secondary:hover:not(:disabled) {
+      background: rgba(14, 165, 233, 0.25);
+      border-color: #38bdf8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(14, 165, 233, 0.15);
     }
 
-    .page.active {
-      display: block;
-    }
+    .btn-secondary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
 
-    .header {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
+    .header { text-align: center; margin-bottom: 25px; }
     .header h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 1.8rem;
@@ -316,10 +303,7 @@
       color: #b0d4ee;
     }
 
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-
+    .form-group { margin-bottom: 1.2rem; }
     .form-group label {
       display: flex;
       align-items: center;
@@ -329,11 +313,7 @@
       margin-bottom: 6px;
       color: #bddcee;
     }
-
-    .form-group label i {
-      width: 22px;
-      color: #38bdf8;
-    }
+    .form-group label i { width: 22px; color: #38bdf8; }
 
     input, textarea {
       width: 100%;
@@ -367,20 +347,9 @@
       transition: 0.3s;
     }
 
-    .checkbox-group:hover {
-      border-color: rgba(56, 189, 248, 0.25);
-    }
-
-    .checkbox-group input[type="checkbox"] {
-      width: 20px;
-      height: 20px;
-      accent-color: #0ea5e9;
-    }
-
-    .checkbox-group label {
-      margin: 0;
-      cursor: pointer;
-    }
+    .checkbox-group:hover { border-color: rgba(56, 189, 248, 0.25); }
+    .checkbox-group input[type="checkbox"] { width: 20px; height: 20px; accent-color: #0ea5e9; }
+    .checkbox-group label { margin: 0; cursor: pointer; }
 
     .syarat-box {
       background: rgba(0, 40, 90, 0.2);
@@ -390,12 +359,7 @@
       margin: 20px 0;
     }
 
-    .syarat-box h3 {
-      color: #7dd3fc;
-      font-weight: 600;
-      font-size: 1.05rem;
-      margin-bottom: 12px;
-    }
+    .syarat-box h3 { color: #7dd3fc; font-weight: 600; font-size: 1.05rem; margin-bottom: 12px; }
 
     .syarat-item {
       background: rgba(0, 20, 50, 0.3);
@@ -405,10 +369,7 @@
       border-left: 3px solid #0ea5e9;
     }
 
-    .syarat-item i {
-      color: #38bdf8;
-      margin-right: 8px;
-    }
+    .syarat-item i { color: #38bdf8; margin-right: 8px; }
 
     .nama-contoh {
       background: rgba(0, 80, 160, 0.15);
@@ -443,24 +404,7 @@
       transition: 0.3s;
     }
 
-    .back-link:hover {
-      color: #7dd3fc;
-      letter-spacing: 0.5px;
-    }
-
-    .credit {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 0.65rem;
-      color: #2a5a7a;
-      border-top: 1px solid rgba(56, 189, 248, 0.05);
-      padding-top: 20px;
-      letter-spacing: 1px;
-    }
-
-    .credit i {
-      color: #38bdf8;
-    }
+    .back-link:hover { color: #7dd3fc; letter-spacing: 0.5px; }
 
     .double-option {
       display: flex;
@@ -481,34 +425,18 @@
       font-weight: 400;
     }
 
-    .btn-secondary {
-      background: rgba(14, 165, 233, 0.12);
-      border: 1px solid rgba(56, 189, 248, 0.15);
-      color: white;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 14px 24px;
-      border-radius: 60px;
-      width: 100%;
-      cursor: pointer;
-      transition: 0.3s;
-      margin-top: 16px;
+    .credit {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.65rem;
+      color: #2a5a7a;
+      border-top: 1px solid rgba(56, 189, 248, 0.05);
+      padding-top: 20px;
+      letter-spacing: 1px;
     }
 
-    .btn-secondary:hover:not(:disabled) {
-      background: rgba(14, 165, 233, 0.25);
-      border-color: #38bdf8;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(14, 165, 233, 0.15);
-    }
+    .credit i { color: #38bdf8; }
 
-    .btn-secondary:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    /* Loading overlay */
     .loading-overlay {
       position: fixed;
       top: 0;
@@ -517,17 +445,14 @@
       height: 100%;
       background: rgba(2, 8, 18, 0.95);
       backdrop-filter: blur(12px);
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       z-index: 999;
-      display: none;
     }
 
-    .loading-overlay.show {
-      display: flex;
-    }
+    .loading-overlay.show { display: flex; }
 
     .loading-spinner {
       width: 50px;
@@ -539,21 +464,10 @@
       margin-bottom: 20px;
     }
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
-    .loading-text {
-      font-size: 1.1rem;
-      color: #b0d4ee;
-      letter-spacing: 2px;
-    }
-
-    .loading-sub {
-      font-size: 0.8rem;
-      color: #4a7a9a;
-      margin-top: 10px;
-    }
+    .loading-text { font-size: 1.1rem; color: #b0d4ee; letter-spacing: 2px; }
+    .loading-sub { font-size: 0.8rem; color: #4a7a9a; margin-top: 10px; }
 
     @media (max-width: 600px) {
       .container { padding: 1.5rem 1.2rem; }
@@ -565,6 +479,9 @@
   </style>
 </head>
 <body>
+
+<!-- AUDIO BACKGROUND -->
+<audio id="bgAudio" src="musikxputz.mp3" loop preload="auto"></audio>
 
 <div class="bg-glow"></div>
 <div class="bg-glow2"></div>
@@ -582,7 +499,7 @@
       <div class="judul-home">XNR SELECTION</div>
       <div class="motto">
         <i class="fas fa-water"></i>
-        "Bersama XNR, kita wujudkan mimpi dan raih prestasi. Solidaritas tanpa batas, loyalitas sejati."
+        "dua tiga buah kedondong xnr nih bos senggol dong"
         <i class="fas fa-water"></i>
       </div>
       <div class="admin-section">
@@ -718,24 +635,30 @@
 
   let tiktokUsername = "";
 
-  // ===== NAVIGASI =====
+  // ===== NAVIGASI (PAKAI FUNGSI GLOBAL) =====
   function showPage(pageId) {
-    // Sembunyikan semua halaman
-    const pages = document.querySelectorAll('.page');
-    pages.forEach(function(page) {
-      page.classList.remove('active');
+    document.querySelectorAll('.page').forEach(function(p) {
+      p.classList.remove('active');
     });
-    // Tampilkan halaman yang dipilih
-    const target = document.getElementById(pageId);
-    if (target) {
-      target.classList.add('active');
-    } else {
-      console.error('Halaman tidak ditemukan:', pageId);
-    }
+    var target = document.getElementById(pageId);
+    if (target) target.classList.add('active');
   }
 
   // ===== VERIFIKASI =====
   function updateVerifikasiBtn() {
     var tiktok = document.getElementById('tiktokUsername').value.trim();
     var cekNama = document.getElementById('checkNama').checked;
-    var cekPosting =
+    var cekPosting = document.getElementById('checkPosting').checked;
+    var btn = document.getElementById('verifikasiBtn');
+    btn.disabled = !(tiktok && cekNama && cekPosting);
+  }
+
+  document.getElementById('tiktokUsername').addEventListener('input', updateVerifikasiBtn);
+  document.getElementById('checkNama').addEventListener('change', updateVerifikasiBtn);
+  document.getElementById('checkPosting').addEventListener('change', updateVerifikasiBtn);
+
+  function verifikasi() {
+    tiktokUsername = document.getElementById('tiktokUsername').value.trim();
+    if (!tiktokUsername) return alert("Masukkan username TikTok!");
+    document.getElementById('tiktokFinal').value = tiktokUsername;
+    alert("✅ Verifikasi berhasil! S
