@@ -22,7 +22,7 @@ body {
   backdrop-filter: blur(12px);
   border-radius: 32px;
   border: 1px solid rgba(0, 180, 255, 0.15);
-  padding: 2.5rem 2rem;
+  padding: 2rem 1.8rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
 }
 
@@ -46,13 +46,13 @@ body {
 }
 
 .logo-container {
-  width: 130px;
-  height: 130px;
-  margin: 0 auto 20px;
-  border-radius: 30px;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 15px;
+  border-radius: 25px;
   overflow: hidden;
   border: 2px solid #0ea5e9;
-  box-shadow: 0 0 30px rgba(14, 165, 233, 0.2);
+  box-shadow: 0 0 25px rgba(14, 165, 233, 0.2);
 }
 
 .logo-container img {
@@ -63,30 +63,30 @@ body {
 
 .judul-home {
   font-family: 'Orbitron', sans-serif;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 3px;
   color: #7dd3fc;
   text-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
 .subtitle {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: #6a9fc9;
   letter-spacing: 4px;
   text-transform: uppercase;
 }
 
 .motto {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-style: italic;
   color: #b8d4e6;
-  padding: 16px 20px;
+  padding: 14px 18px;
   border: 1px solid rgba(56, 189, 248, 0.15);
-  max-width: 600px;
-  margin: 20px auto;
-  border-radius: 16px;
+  max-width: 550px;
+  margin: 15px auto;
+  border-radius: 14px;
   background: rgba(0, 100, 200, 0.05);
 }
 
@@ -95,35 +95,35 @@ body {
   margin: 0 6px;
 }
 
-/* ADMIN SECTION */
+/* ADMIN SECTION - VERSI KECIL */
 .admin-section {
-  margin: 30px 0 20px;
+  margin: 20px 0 15px;
 }
 
 .admin-section h2 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 2px;
   color: #7dd3fc;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .admin-grid {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  max-width: 550px;
+  gap: 8px;
+  max-width: 480px;
   margin: 0 auto;
 }
 
 .admin-card {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   background: rgba(0, 40, 80, 0.25);
   border: 1px solid rgba(56, 189, 248, 0.08);
-  border-radius: 18px;
-  padding: 12px 18px;
+  border-radius: 14px;
+  padding: 8px 14px;
   transition: 0.3s;
   backdrop-filter: blur(4px);
 }
@@ -135,8 +135,8 @@ body {
 }
 
 .admin-avatar {
-  width: 52px;
-  height: 52px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid #0ea5e9;
@@ -155,24 +155,24 @@ body {
 }
 
 .admin-name {
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #7dd3fc;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .admin-role {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #8ab4d6;
 }
 
 .admin-detail {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   color: #6a8aaa;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
-/* ADMIN TERAKHIR (RAUL) */
+/* ADMIN TERAKHIR */
 .last-admin {
   border-color: rgba(56, 189, 248, 0.3);
   background: rgba(0, 80, 160, 0.15);
@@ -183,9 +183,9 @@ body {
 }
 
 .tahun-marga {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #4a7a9a;
-  margin: 25px 0 15px;
+  margin: 20px 0 10px;
   letter-spacing: 3px;
 }
 
@@ -195,18 +195,18 @@ body {
   border: none;
   color: white;
   font-weight: 700;
-  font-size: 1rem;
-  padding: 14px 30px;
+  font-size: 0.95rem;
+  padding: 12px 28px;
   border-radius: 60px;
   width: 100%;
-  max-width: 380px;
-  margin: 20px auto 0;
+  max-width: 350px;
+  margin: 15px auto 0;
   cursor: pointer;
   transition: 0.3s;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
 }
 
@@ -221,13 +221,13 @@ body {
   border: 1px solid rgba(56, 189, 248, 0.15);
   color: white;
   font-weight: 600;
-  font-size: 1rem;
-  padding: 14px 24px;
+  font-size: 0.9rem;
+  padding: 12px 22px;
   border-radius: 60px;
   width: 100%;
   cursor: pointer;
   transition: 0.3s;
-  margin-top: 16px;
+  margin-top: 14px;
 }
 
 .btn-secondary:hover:not(:disabled) {
@@ -245,56 +245,56 @@ body {
 /* HEADER HALAMAN LAIN */
 .header {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .header h1 {
   font-family: 'Orbitron', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #7dd3fc;
   text-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
 }
 
 .header .sub {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   background: rgba(0, 80, 160, 0.15);
   border: 1px solid rgba(56, 189, 248, 0.1);
-  padding: 6px 18px;
+  padding: 5px 16px;
   border-radius: 40px;
   display: inline-block;
-  margin-top: 12px;
+  margin-top: 10px;
   color: #b0d4ee;
 }
 
 /* FORM */
 .form-group {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .form-group label {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-weight: 600;
-  font-size: 0.85rem;
-  margin-bottom: 6px;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
   color: #bddcee;
 }
 
 .form-group label i {
-  width: 22px;
+  width: 20px;
   color: #38bdf8;
 }
 
 input, textarea {
   width: 100%;
-  padding: 12px 16px;
+  padding: 10px 14px;
   background: rgba(0, 20, 50, 0.5);
   border: 1px solid rgba(56, 189, 248, 0.15);
-  border-radius: 16px;
+  border-radius: 14px;
   color: #e5f3ff;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   outline: none;
   transition: 0.2s;
   font-family: 'Poppins', sans-serif;
@@ -309,12 +309,12 @@ input:focus, textarea:focus {
 .checkbox-group {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   background: rgba(0, 40, 90, 0.15);
   border: 1px solid rgba(56, 189, 248, 0.08);
-  border-radius: 16px;
-  padding: 12px 18px;
-  margin: 12px 0;
+  border-radius: 14px;
+  padding: 10px 14px;
+  margin: 10px 0;
   transition: 0.2s;
 }
 
@@ -323,36 +323,37 @@ input:focus, textarea:focus {
 }
 
 .checkbox-group input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   accent-color: #0ea5e9;
 }
 
 .checkbox-group label {
   margin: 0;
   cursor: pointer;
+  font-size: 0.85rem;
 }
 
 .syarat-box {
   background: rgba(0, 40, 90, 0.2);
   border: 1px solid rgba(56, 189, 248, 0.1);
-  border-radius: 20px;
-  padding: 22px;
-  margin: 20px 0;
+  border-radius: 18px;
+  padding: 18px;
+  margin: 16px 0;
 }
 
 .syarat-box h3 {
   color: #7dd3fc;
   font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: 12px;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
 }
 
 .syarat-item {
   background: rgba(0, 20, 50, 0.3);
-  border-radius: 16px;
-  padding: 14px 16px;
-  margin: 12px 0;
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin: 10px 0;
   border-left: 3px solid #0ea5e9;
 }
 
@@ -363,38 +364,38 @@ input:focus, textarea:focus {
 
 .nama-contoh {
   background: rgba(0, 80, 160, 0.15);
-  padding: 10px;
-  border-radius: 12px;
+  padding: 8px;
+  border-radius: 10px;
   font-family: monospace;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #7dd3fc;
   text-align: center;
-  margin: 8px 0;
+  margin: 6px 0;
   border: 1px dashed rgba(56, 189, 248, 0.15);
 }
 
 .tagar {
   background: rgba(14, 165, 233, 0.12);
   color: #7dd3fc;
-  padding: 4px 14px;
-  border-radius: 20px;
-  font-size: 0.8rem;
+  padding: 3px 12px;
+  border-radius: 18px;
+  font-size: 0.75rem;
   font-weight: 600;
   display: inline-block;
-  margin: 4px 4px 0 0;
+  margin: 3px 3px 0 0;
   border: 1px solid rgba(56, 189, 248, 0.1);
 }
 
 .back-link {
   text-align: center;
-  margin-top: 18px;
-  font-size: 0.8rem;
+  margin-top: 14px;
+  font-size: 0.75rem;
   color: #5a8aaa;
   cursor: pointer;
   transition: 0.2s;
   display: block;
   width: 100%;
-  padding: 8px 0;
+  padding: 6px 0;
 }
 
 .back-link:hover {
@@ -404,9 +405,9 @@ input:focus, textarea:focus {
 
 .double-option {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   background: rgba(0, 30, 60, 0.2);
-  padding: 10px 16px;
+  padding: 8px 14px;
   border-radius: 40px;
   border: 1px solid rgba(56, 189, 248, 0.08);
   flex-wrap: wrap;
@@ -419,15 +420,16 @@ input:focus, textarea:focus {
   cursor: pointer;
   margin: 0;
   font-weight: 400;
+  font-size: 0.85rem;
 }
 
 .credit {
   text-align: center;
-  margin-top: 30px;
-  font-size: 0.65rem;
+  margin-top: 25px;
+  font-size: 0.6rem;
   color: #2a5a7a;
   border-top: 1px solid rgba(56, 189, 248, 0.05);
-  padding-top: 20px;
+  padding-top: 16px;
   letter-spacing: 1px;
 }
 
@@ -456,13 +458,13 @@ input:focus, textarea:focus {
 }
 
 .loading-spinner {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border: 3px solid rgba(56, 189, 248, 0.08);
   border-top: 3px solid #38bdf8;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 @keyframes spin {
@@ -470,24 +472,25 @@ input:focus, textarea:focus {
 }
 
 .loading-text {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #b0d4ee;
   letter-spacing: 2px;
 }
 
 .loading-sub {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #4a7a9a;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 @media (max-width: 600px) {
-  .container { padding: 1.5rem 1.2rem; }
-  .judul-home { font-size: 1.6rem; }
-  .logo-container { width: 100px; height: 100px; }
-  .admin-card { padding: 10px 14px; }
-  .admin-avatar { width: 40px; height: 40px; }
-  .admin-name { font-size: 0.85rem; }
-  .admin-role { font-size: 0.7rem; }
-  .admin-detail { font-size: 0.6rem; }
+  .container { padding: 1.2rem 1rem; }
+  .judul-home { font-size: 1.3rem; }
+  .logo-container { width: 85px; height: 85px; }
+  .admin-card { padding: 6px 12px; }
+  .admin-avatar { width: 32px; height: 32px; }
+  .admin-name { font-size: 0.75rem; }
+  .admin-role { font-size: 0.6rem; }
+  .admin-detail { font-size: 0.55rem; }
+  .motto { font-size: 0.8rem; padding: 10px 14px; }
   }
