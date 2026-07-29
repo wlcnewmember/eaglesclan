@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>🌊 XNR SELECTION | Official</title>
+  <title>🌊 XNR SELECTION V2 | Official</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
@@ -27,23 +27,105 @@
         "dua tiga buah kedondong xnr nih bos senggol dong"
         <i class="fas fa-water"></i>
       </div>
+
+      <!-- ADMIN CARD LIST -->
       <div class="admin-section">
         <h2><i class="fas fa-users"></i> ADMIN MARGA XNR</h2>
-        <ul class="admin-list">
-          <li><i class="fas fa-crown"></i> KAYEYE</li>
-          <li><i class="fas fa-dragon"></i> RASYID</li>
-          <li><i class="fas fa-bolt"></i> VOLTAR</li>
-          <li><i class="fas fa-shield-alt"></i> REYZ</li>
-          <li><i class="fas fa-star"></i> KINAN</li>
-          <li><i class="fas fa-fire"></i> MARVEL</li>
-          <li><i class="fas fa-feather-alt"></i> FANZ</li>
-          <li><i class="fas fa-skull"></i> RAUL</li>
-        </ul>
+        <div class="admin-grid">
+
+          <!-- KAYEYE -->
+          <div class="admin-card">
+            <div class="admin-avatar">
+              <img src="kayeye.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=K'">
+            </div>
+            <div class="admin-info">
+              <div class="admin-name">KAYEYE</div>
+              <div class="admin-role">👑 Owner</div>
+              <div class="admin-detail">📍 Jabar • sejak XNR berdiri</div>
+            </div>
+          </div>
+
+          <!-- XION -->
+          <div class="admin-card">
+            <div class="admin-avatar">
+              <img src="xion.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=X'">
+            </div>
+            <div class="admin-info">
+              <div class="admin-name">XION</div>
+              <div class="admin-role">👤 Admin</div>
+              <div class="admin-detail">📍 Jatim • 2 bulan di XNR</div>
+            </div>
+          </div>
+
+          <!-- REYIZ -->
+          <div class="admin-card">
+            <div class="admin-avatar">
+              <img src="reyiz.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=R'">
+            </div>
+            <div class="admin-info">
+              <div class="admin-name">REYIZ</div>
+              <div class="admin-role">👤 Admin</div>
+              <div class="admin-detail">📍 Jabar • 4 bulan di XNR</div>
+            </div>
+          </div>
+
+          <!-- VOLTAR -->
+          <div class="admin-card">
+            <div class="admin-avatar">
+              <img src="voltar.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=V'">
+            </div>
+            <div class="admin-info">
+              <div class="admin-name">VOLTAR</div>
+              <div class="admin-role">👤 Admin</div>
+              <div class="admin-detail">📍 Jateng • 5 bulan di XNR</div>
+            </div>
+          </div>
+
+          <!-- RASYID -->
+          <div class="admin-card">
+            <div class="admin-avatar">
+              <img src="rasyid.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=R'">
+            </div>
+            <div class="admin-info">
+              <div class="admin-name">RASYID</div>
+              <div class="admin-role">👤 Admin</div>
+              <div class="admin-detail">📍 Kalimantan • sejak XNR berdiri</div>
+            </div>
+          </div>
+
+          <!-- MARVEL -->
+          <div class="admin-card">
+            <div class="admin-avatar">
+              <img src="marvel.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=M'">
+            </div>
+            <div class="admin-info">
+              <div class="admin-name">MARVEL</div>
+              <div class="admin-role">👤 Admin</div>
+              <div class="admin-detail">📍 Jabar • 2 bulan di XNR</div>
+            </div>
+          </div>
+
+          <!-- RAUL (ADMIN TERAKHIR) -->
+          <div class="admin-card last-admin">
+            <div class="admin-avatar">
+              <img src="raul.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=R'">
+            </div>
+            <div class="admin-info">
+              <div class="admin-name">RAUL</div>
+              <div class="admin-role">💻 Handler Web & Admin</div>
+              <div class="admin-detail">📍 Jabar • 1 bulan di XNR</div>
+            </div>
+          </div>
+
+        </div>
       </div>
-      <div class="tahun-marga"><i class="fas fa-calendar-alt"></i> BERDIRI SEJAK 2024</div>
+
+      <!-- TOMBOL LANJUTKAN -->
       <button class="btn-primary" onclick="showPage('syaratPage')">
         <i class="fas fa-arrow-right"></i> LANJUTKAN PENDAFTARAN
       </button>
+
+      <div class="tahun-marga"><i class="fas fa-calendar-alt"></i> BERDIRI SEJAK 2024</div>
     </div>
   </div>
 
@@ -77,11 +159,11 @@
 
     <div class="checkbox-group">
       <input type="checkbox" id="checkNama">
-      <label> Saya sudah mengubah nama TikTok sesuai format XNR</label>
+      <label>✅ Saya sudah mengubah nama TikTok sesuai format XNR</label>
     </div>
     <div class="checkbox-group">
       <input type="checkbox" id="checkPosting">
-      <label> Saya sudah posting video dengan tagar #margaxnr</label>
+      <label>✅ Saya sudah posting video dengan tagar #margaxnr</label>
     </div>
 
     <button class="btn-secondary" id="verifikasiBtn" disabled onclick="verifikasi()">
