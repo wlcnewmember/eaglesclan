@@ -138,4 +138,4 @@ document.getElementById('btnSeleksi').addEventListener('click', executeSeleksi);
 
 // Inisialisasi
 updateVerifikasiBtn();
-console.log("✅ XNR SELECTION SIAP!");
+console.log("✅ XNR SELECTION V2 SIAP!");
