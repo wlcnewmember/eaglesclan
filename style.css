@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0b1a30, #041221);
+  background: radial-gradient(circle at 20% 30%, #0a1a2e, #020812);
   color: #e0f2fe;
   min-height: 100vh;
   display: flex;
@@ -18,12 +18,12 @@ body {
 .container {
   max-width: 880px;
   width: 100%;
-  background: rgba(10, 22, 40, 0.75);
-  backdrop-filter: blur(10px);
+  background: rgba(8, 20, 40, 0.8);
+  backdrop-filter: blur(12px);
   border-radius: 32px;
-  border: 1px solid rgba(0, 180, 255, 0.2);
+  border: 1px solid rgba(0, 180, 255, 0.15);
   padding: 2.5rem 2rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
 }
 
 .page {
@@ -36,16 +36,11 @@ body {
 }
 
 @keyframes fade {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
+/* HOME */
 .home-content {
   text-align: center;
 }
@@ -67,6 +62,7 @@ body {
 }
 
 .judul-home {
+  font-family: 'Orbitron', sans-serif;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 3px;
@@ -80,7 +76,6 @@ body {
   color: #6a9fc9;
   letter-spacing: 4px;
   text-transform: uppercase;
-  margin-bottom: 5px;
 }
 
 .motto {
@@ -100,54 +95,101 @@ body {
   margin: 0 6px;
 }
 
+/* ADMIN SECTION */
 .admin-section {
   margin: 30px 0 20px;
 }
 
 .admin-section h2 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 2px;
   color: #7dd3fc;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
-.admin-list {
+.admin-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   gap: 10px;
-  list-style: none;
+  max-width: 550px;
+  margin: 0 auto;
 }
 
-.admin-list li {
-  background: rgba(0, 80, 160, 0.2);
-  border: 1px solid rgba(56, 189, 248, 0.15);
-  padding: 8px 20px;
-  border-radius: 40px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #c7e6ff;
-  transition: 0.2s;
+.admin-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(0, 40, 80, 0.25);
+  border: 1px solid rgba(56, 189, 248, 0.08);
+  border-radius: 18px;
+  padding: 12px 18px;
+  transition: 0.3s;
+  backdrop-filter: blur(4px);
 }
 
-.admin-list li:hover {
-  background: rgba(0, 120, 220, 0.3);
-  border-color: #38bdf8;
+.admin-card:hover {
+  background: rgba(0, 60, 120, 0.3);
+  border-color: rgba(56, 189, 248, 0.25);
+  transform: translateX(6px);
 }
 
-.admin-list li i {
-  margin-right: 8px;
+.admin-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #0ea5e9;
+  flex-shrink: 0;
+}
+
+.admin-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-info {
+  text-align: left;
+  flex: 1;
+}
+
+.admin-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #7dd3fc;
+  letter-spacing: 1px;
+}
+
+.admin-role {
+  font-size: 0.8rem;
+  color: #8ab4d6;
+}
+
+.admin-detail {
+  font-size: 0.7rem;
+  color: #6a8aaa;
+  margin-top: 2px;
+}
+
+/* ADMIN TERAKHIR (RAUL) */
+.last-admin {
+  border-color: rgba(56, 189, 248, 0.3);
+  background: rgba(0, 80, 160, 0.15);
+}
+
+.last-admin .admin-name {
   color: #38bdf8;
 }
 
 .tahun-marga {
   font-size: 0.8rem;
-  color: #5a8aaa;
-  margin: 20px 0 25px;
+  color: #4a7a9a;
+  margin: 25px 0 15px;
   letter-spacing: 3px;
 }
 
+/* TOMBOL */
 .btn-primary {
   background: linear-gradient(135deg, #0ea5e9, #0284c7);
   border: none;
@@ -158,9 +200,9 @@ body {
   border-radius: 60px;
   width: 100%;
   max-width: 380px;
-  margin: 10px auto 0;
+  margin: 20px auto 0;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.3s;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -169,14 +211,14 @@ body {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(14, 165, 233, 0.5);
   background: linear-gradient(135deg, #38bdf8, #0284c7);
 }
 
 .btn-secondary {
-  background: rgba(14, 165, 233, 0.15);
-  border: 1px solid rgba(56, 189, 248, 0.2);
+  background: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.15);
   color: white;
   font-weight: 600;
   font-size: 1rem;
@@ -184,12 +226,12 @@ body {
   border-radius: 60px;
   width: 100%;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.3s;
   margin-top: 16px;
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background: rgba(14, 165, 233, 0.3);
+  background: rgba(14, 165, 233, 0.25);
   border-color: #38bdf8;
   transform: translateY(-2px);
 }
@@ -200,12 +242,14 @@ body {
   transform: none;
 }
 
+/* HEADER HALAMAN LAIN */
 .header {
   text-align: center;
   margin-bottom: 25px;
 }
 
 .header h1 {
+  font-family: 'Orbitron', sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: #7dd3fc;
@@ -223,6 +267,7 @@ body {
   color: #b0d4ee;
 }
 
+/* FORM */
 .form-group {
   margin-bottom: 1.2rem;
 }
@@ -242,8 +287,7 @@ body {
   color: #38bdf8;
 }
 
-input,
-textarea {
+input, textarea {
   width: 100%;
   padding: 12px 16px;
   background: rgba(0, 20, 50, 0.5);
@@ -256,8 +300,7 @@ textarea {
   font-family: 'Poppins', sans-serif;
 }
 
-input:focus,
-textarea:focus {
+input:focus, textarea:focus {
   border-color: #38bdf8;
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
   background: rgba(0, 30, 70, 0.5);
@@ -342,7 +385,6 @@ textarea:focus {
   border: 1px solid rgba(56, 189, 248, 0.1);
 }
 
-/* ===== TOMBOL KEMBALI KE SYARAT (SUDAH FIXED CENTER) ===== */
 .back-link {
   text-align: center;
   margin-top: 18px;
@@ -393,6 +435,7 @@ textarea:focus {
   color: #38bdf8;
 }
 
+/* LOADING */
 .loading-overlay {
   position: fixed;
   top: 0;
@@ -423,9 +466,7 @@ textarea:focus {
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
 .loading-text {
@@ -441,22 +482,12 @@ textarea:focus {
 }
 
 @media (max-width: 600px) {
-  .container {
-    padding: 1.5rem 1.2rem;
-  }
-  .judul-home {
-    font-size: 1.6rem;
-  }
-  .logo-container {
-    width: 100px;
-    height: 100px;
-  }
-  .admin-list li {
-    font-size: 0.75rem;
-    padding: 6px 14px;
-  }
-  .motto {
-    font-size: 0.9rem;
-    padding: 12px;
-  }
+  .container { padding: 1.5rem 1.2rem; }
+  .judul-home { font-size: 1.6rem; }
+  .logo-container { width: 100px; height: 100px; }
+  .admin-card { padding: 10px 14px; }
+  .admin-avatar { width: 40px; height: 40px; }
+  .admin-name { font-size: 0.85rem; }
+  .admin-role { font-size: 0.7rem; }
+  .admin-detail { font-size: 0.6rem; }
   }
