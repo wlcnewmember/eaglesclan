@@ -17,13 +17,15 @@
   <!-- HOME -->
   <div id="homePage" class="page active">
     <div class="home-content">
-      <div class="logo-container">
+      <div class="logo-container" id="logoHome">
         <img src="logoxnr.png" alt="XNR">
       </div>
       <div class="subtitle">✦ Official Selection ✦</div>
       <div class="judul-home">XNR SELECTION</div>
       <div class="motto">
+        <i class="fas fa-water"></i>
         "dua tiga buah kedondong xnr nih bos senggol dong"
+        <i class="fas fa-water"></i>
       </div>
 
       <!-- ADMIN CARD LIST -->
@@ -32,7 +34,7 @@
         <div class="admin-grid">
 
           <!-- KAYEYE -->
-          <div class="admin-card">
+          <div class="admin-card" onclick="bukaTentangAdmin('kayeye')">
             <div class="admin-avatar">
               <img src="kayeye.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=K'">
             </div>
@@ -44,7 +46,7 @@
           </div>
 
           <!-- XION -->
-          <div class="admin-card">
+          <div class="admin-card" onclick="bukaTentangAdmin('xion')">
             <div class="admin-avatar">
               <img src="xion.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=X'">
             </div>
@@ -56,7 +58,7 @@
           </div>
 
           <!-- REYIZ -->
-          <div class="admin-card">
+          <div class="admin-card" onclick="bukaTentangAdmin('reyiz')">
             <div class="admin-avatar">
               <img src="reyiz.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=R'">
             </div>
@@ -68,7 +70,7 @@
           </div>
 
           <!-- VOLTAR -->
-          <div class="admin-card">
+          <div class="admin-card" onclick="bukaTentangAdmin('voltar')">
             <div class="admin-avatar">
               <img src="voltar.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=V'">
             </div>
@@ -80,7 +82,7 @@
           </div>
 
           <!-- RASYID -->
-          <div class="admin-card">
+          <div class="admin-card" onclick="bukaTentangAdmin('rasyid')">
             <div class="admin-avatar">
               <img src="rasyid.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=R'">
             </div>
@@ -92,7 +94,7 @@
           </div>
 
           <!-- MARVEL -->
-          <div class="admin-card">
+          <div class="admin-card" onclick="bukaTentangAdmin('marvel')">
             <div class="admin-avatar">
               <img src="marvel.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=M'">
             </div>
@@ -104,7 +106,7 @@
           </div>
 
           <!-- RAUL (ADMIN TERAKHIR) -->
-          <div class="admin-card last-admin">
+          <div class="admin-card last-admin" onclick="bukaTentangAdmin('raul')">
             <div class="admin-avatar">
               <img src="raul.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=R'">
             </div>
@@ -123,7 +125,7 @@
         <i class="fas fa-arrow-right"></i> LANJUTKAN PENDAFTARAN
       </button>
 
-      <div class="tahun-marga"><i class="fas fa-calendar-alt"></i> BERDIRI SEJAK 2025 | made by raul</div>
+      <div class="tahun-marga"><i class="fas fa-calendar-alt"></i> BERDIRI SEJAK 2024</div>
     </div>
   </div>
 
@@ -219,6 +221,26 @@
 
     <div class="back-link" onclick="showPage('syaratPage')">
       <i class="fas fa-arrow-left"></i> Kembali ke Syarat
+    </div>
+    <div class="credit"><i class="fas fa-copyright"></i> 2025 • XNR Selection</div>
+  </div>
+
+  <!-- HALAMAN TENTANG ADMIN -->
+  <div id="tentangAdminPage" class="page">
+    <div class="header">
+      <div class="logo-container" id="logoAbout" style="width: 160px; height: 160px; margin: 0 auto 15px; border-radius: 40px; overflow: hidden; border: 3px solid #0ea5e9; box-shadow: 0 0 50px rgba(14, 165, 233, 0.3); transition: all 0.5s ease;">
+        <img src="logoxnr.png" alt="XIONARA">
+      </div>
+      <h1 style="font-family: 'Orbitron', sans-serif; font-size: 1.8rem; color: #7dd3fc; text-shadow: 0 0 30px rgba(56, 189, 248, 0.2);">✦ XIONARA MAJU ✦</h1>
+      <div style="font-size: 0.8rem; color: #6a9fc9; margin-top: 5px;">Tentang Admin</div>
+    </div>
+
+    <div id="adminDetailContainer" style="background: rgba(0, 40, 80, 0.2); border-radius: 24px; padding: 25px; border: 1px solid rgba(56, 189, 248, 0.1);">
+      <!-- Isi akan diisi oleh JavaScript -->
+    </div>
+
+    <div class="back-link" onclick="showPage('homePage')" style="margin-top: 20px;">
+      <i class="fas fa-arrow-left"></i> Kembali ke Beranda
     </div>
     <div class="credit"><i class="fas fa-copyright"></i> 2025 • XNR Selection</div>
   </div>
