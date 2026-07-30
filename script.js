@@ -203,9 +203,10 @@ function bukaTentangAdmin(adminId) {
       </div>
     </div>
 
+    <!-- FOTO PERSEGI PANJANG -->
     <div style="text-align: center; margin: 20px 0;">
-      <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 2px solid #0ea5e9; box-shadow: 0 0 30px rgba(14, 165, 233, 0.25); margin: 0 auto;">
-        <img src="${adminId}.jpg" alt="mata anime" onerror="this.src='https://placehold.co/120x120/0a2a4a/38bdf8?text=${data.nama.charAt(0)}'">
+      <div style="width: 160px; height: 100px; border-radius: 16px; overflow: hidden; border: 2px solid #0ea5e9; box-shadow: 0 0 30px rgba(14, 165, 233, 0.25); margin: 0 auto;">
+        <img src="${adminId}.jpg" alt="mata anime" onerror="this.src='https://placehold.co/160x100/0a2a4a/38bdf8?text=${data.nama.charAt(0)}'">
       </div>
     </div>
 
