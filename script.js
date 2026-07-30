@@ -202,7 +202,15 @@ function bukaTentangAdmin(adminId) {
         <div style="font-size: 0.8rem; color: #6a8aaa;">📍 ${data.asal} • ${data.waktu}</div>
       </div>
     </div>
+
+    <div style="text-align: center; margin: 20px 0;">
+      <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 2px solid #0ea5e9; box-shadow: 0 0 30px rgba(14, 165, 233, 0.25); margin: 0 auto;">
+        <img src="${adminId}.jpg" alt="mata anime" onerror="this.src='https://placehold.co/120x120/0a2a4a/38bdf8?text=${data.nama.charAt(0)}'">
+      </div>
+    </div>
+
     <hr style="margin: 20px 0; border-color: rgba(56, 189, 248, 0.1);">
+    
     <div style="text-align: left;">
       <div style="font-size: 0.8rem; color: #6a8aaa; margin-bottom: 8px;">📋 Tugas & Tanggung Jawab:</div>
       <div style="font-size: 1rem; color: #b8d4e6; line-height: 1.6; background: rgba(0, 20, 50, 0.3); padding: 16px; border-radius: 16px; border-left: 3px solid #0ea5e9;">
