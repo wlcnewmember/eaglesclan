@@ -52,6 +52,11 @@ body {
   overflow: hidden;
   border: 2px solid #0ea5e9;
   box-shadow: 0 0 25px rgba(14, 165, 233, 0.2);
+  transition: transform 0.3s;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
 }
 
 .logo-container img {
@@ -125,6 +130,7 @@ body {
   padding: 8px 14px;
   transition: 0.3s;
   backdrop-filter: blur(4px);
+  cursor: pointer;
 }
 
 .admin-card:hover {
@@ -187,6 +193,7 @@ body {
   letter-spacing: 3px;
 }
 
+/* TOMBOL */
 .btn-primary {
   background: linear-gradient(135deg, #0ea5e9, #0284c7);
   border: none;
@@ -282,7 +289,8 @@ body {
   color: #38bdf8;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 10px 14px;
   background: rgba(0, 20, 50, 0.5);
@@ -295,7 +303,8 @@ input, textarea {
   font-family: 'Poppins', sans-serif;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   border-color: #38bdf8;
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
   background: rgba(0, 30, 70, 0.5);
@@ -462,7 +471,9 @@ input:focus, textarea:focus {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .loading-text {
@@ -478,13 +489,34 @@ input:focus, textarea:focus {
 }
 
 @media (max-width: 600px) {
-  .container { padding: 1.2rem 1rem; }
-  .judul-home { font-size: 1.3rem; }
-  .logo-container { width: 85px; height: 85px; }
-  .admin-card { padding: 6px 12px; }
-  .admin-avatar { width: 32px; height: 32px; }
-  .admin-name { font-size: 0.75rem; }
-  .admin-role { font-size: 0.6rem; }
-  .admin-detail { font-size: 0.55rem; }
-  .motto { font-size: 0.8rem; padding: 10px 14px; }
+  .container {
+    padding: 1.2rem 1rem;
   }
+  .judul-home {
+    font-size: 1.3rem;
+  }
+  .logo-container {
+    width: 85px;
+    height: 85px;
+  }
+  .admin-card {
+    padding: 6px 12px;
+  }
+  .admin-avatar {
+    width: 32px;
+    height: 32px;
+  }
+  .admin-name {
+    font-size: 0.75rem;
+  }
+  .admin-role {
+    font-size: 0.6rem;
+  }
+  .admin-detail {
+    font-size: 0.55rem;
+  }
+  .motto {
+    font-size: 0.8rem;
+    padding: 10px 14px;
+  }
+}
