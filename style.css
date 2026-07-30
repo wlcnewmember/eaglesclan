@@ -99,7 +99,6 @@ body {
   margin: 0 6px;
 }
 
-/* ADMIN SECTION - VERSI KECIL */
 .admin-section {
   margin: 20px 0 15px;
 }
@@ -193,7 +192,6 @@ body {
   letter-spacing: 3px;
 }
 
-/* TOMBOL */
 .btn-primary {
   background: linear-gradient(135deg, #0ea5e9, #0284c7);
   border: none;
@@ -488,6 +486,59 @@ textarea:focus {
   margin-top: 8px;
 }
 
+/* ===== HALAMAN TENTANG ADMIN (FONT BAGUS) ===== */
+#tentangAdminPage .header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #7dd3fc;
+  text-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+}
+
+#tentangAdminPage .admin-name-detail {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #7dd3fc;
+  letter-spacing: 1px;
+}
+
+#tentangAdminPage .admin-role-detail {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #8ab4d6;
+}
+
+#tentangAdminPage .admin-detail-detail {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #6a8aaa;
+}
+
+#tentangAdminPage .tugas-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6a8aaa;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#tentangAdminPage .tugas-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #b8d4e6;
+  line-height: 1.8;
+  background: rgba(0, 20, 50, 0.3);
+  padding: 16px 20px;
+  border-radius: 16px;
+  border-left: 3px solid #0ea5e9;
+}
+
 @media (max-width: 600px) {
   .container {
     padding: 1.2rem 1rem;
@@ -519,4 +570,7 @@ textarea:focus {
     font-size: 0.8rem;
     padding: 10px 14px;
   }
-}
+  #tentangAdminPage .admin-name-detail {
+    font-size: 1.2rem;
+  }
+    }
