@@ -203,11 +203,9 @@ function bukaTentangAdmin(adminId) {
       </div>
     </div>
 
-    <!-- FOTO PERSEGI PANJANG -->
-    <div style="text-align: center; margin: 20px 0;">
-      <div style="width: 160px; height: 100px; border-radius: 16px; overflow: hidden; border: 2px solid #0ea5e9; box-shadow: 0 0 30px rgba(14, 165, 233, 0.25); margin: 0 auto;">
-        <img src="${adminId}.jpg" alt="mata anime" onerror="this.src='https://placehold.co/160x100/0a2a4a/38bdf8?text=${data.nama.charAt(0)}'">
-      </div>
+    <!-- FOTO PERSEGI PANJANG 16:9 FULL LEBAR -->
+    <div style="width: 100%; margin: 20px 0; border-radius: 16px; overflow: hidden; border: 2px solid #0ea5e9; box-shadow: 0 0 30px rgba(14, 165, 233, 0.25); aspect-ratio: 16 / 9; background: #0a1a2e;">
+      <img src="${adminId}.jpg" alt="mata anime" onerror="this.src='https://placehold.co/800x450/0a2a4a/38bdf8?text=${data.nama.charAt(0)}'" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
 
     <hr style="margin: 20px 0; border-color: rgba(56, 189, 248, 0.1);">
