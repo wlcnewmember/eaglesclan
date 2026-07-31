@@ -203,7 +203,6 @@ function bukaTentangAdmin(adminId) {
       </div>
     </div>
 
-    <!-- FOTO PERSEGI PANJANG 16:9 FULL LEBAR -->
     <div style="width: 100%; margin: 20px 0; border-radius: 16px; overflow: hidden; border: 2px solid #0ea5e9; box-shadow: 0 0 30px rgba(14, 165, 233, 0.25); aspect-ratio: 16 / 9; background: #0a1a2e;">
       <img src="${adminId}.jpg" alt="mata anime" onerror="this.src='https://placehold.co/800x450/0a2a4a/38bdf8?text=${data.nama.charAt(0)}'" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
@@ -218,7 +217,6 @@ function bukaTentangAdmin(adminId) {
     </div>
   `;
 
-  // Efek zoom logo
   var logoAbout = document.getElementById('logoAbout');
   logoAbout.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
   logoAbout.style.transform = 'scale(1.2)';
@@ -229,7 +227,7 @@ function bukaTentangAdmin(adminId) {
   showPage('tentangAdminPage');
 }
 
-// ===== MENU HAMBURGER (DIPERBAIKI) =====
+// ===== MENU HAMBURGER =====
 function toggleMenu() {
   var menu = document.getElementById('sideMenu');
   var overlay = document.getElementById('menuOverlay');
@@ -247,6 +245,7 @@ function closeMenu() {
   if (menu) menu.classList.remove('open');
   if (overlay) overlay.classList.remove('show');
 }
+
 // ===== MENU ITEMS =====
 function claimAmPrem() {
   closeMenu();
@@ -263,11 +262,28 @@ function tentangXnr() {
   alert("🌊 Tentang XNR\n\nXNR (Xionara) adalah marga yang berdiri sejak 2024. Kami bergerak di bidang kolaborasi, kreativitas, dan pertarungan. Bergabunglah dan raih prestasi bersama kami!");
 }
 
-function tentangXnr() {
-  closeMenu();
-  alert("🌊 Tentang XNR\n\nXNR (Xionara) adalah marga yang berdiri sejak 2024. Kami bergerak di bidang kolaborasi, kreativitas, dan pertarungan. Bergabunglah dan raih prestasi bersama kami!");
+// ===== ANIMASI SCROLL ADMIN CARD =====
+function animasiCardAdmin() {
+  var cards = document.querySelectorAll('.admin-card');
+  var windowHeight = window.innerHeight;
+  var triggerPoint = 150;
+
+  cards.forEach(function(card, index) {
+    var cardTop = card.getBoundingClientRect().top;
+
+    if (cardTop < windowHeight - triggerPoint) {
+      setTimeout(function() {
+        card.classList.add('show');
+      }, index * 120);
+    }
+  });
 }
+
+// Jalankan saat halaman di-load & di-scroll
+window.addEventListener('load', animasiCardAdmin);
+window.addEventListener('scroll', animasiCardAdmin);
+window.addEventListener('resize', animasiCardAdmin);
 
 // ===== INISIALISASI =====
 updateVerifikasiBtn();
-console.log("✅ XNR SELECTION V2 SIAP!");
+console.log("✅ XNR SELECTION V2 SIAP - ANIMASI SCROLL AKTIF!");
