@@ -135,25 +135,6 @@
       transform: none;
     }
 
-    .btn-secondary {
-      background: rgba(14, 165, 233, 0.12);
-      border: 1px solid rgba(56, 189, 248, 0.15);
-      color: white;
-      font-weight: 600;
-      font-size: 0.9rem;
-      padding: 12px 22px;
-      border-radius: 60px;
-      width: 100%;
-      cursor: pointer;
-      transition: 0.3s;
-      margin-top: 10px;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(14, 165, 233, 0.25);
-      border-color: #38bdf8;
-    }
-
     .back-link {
       text-align: center;
       margin-top: 18px;
@@ -293,6 +274,18 @@
   const watchAdBtn = document.getElementById('watchAdBtn');
   const claimBtn = document.getElementById('claimBtn');
 
+  // ===== AMBIL PROGRESS DARI LOCALSTORAGE =====
+  const savedCount = localStorage.getItem('watchCount');
+  if (savedCount !== null) {
+    watchCount = parseInt(savedCount);
+  }
+
+  // ===== CEK APAKAH INI RELOAD DARI TOMBOL =====
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('reload')) {
+    console.log('Reload detected - popunder should appear');
+  }
+
   // ===== UPDATE UI =====
   function updateUI() {
     counterDisplay.textContent = watchCount;
@@ -308,30 +301,22 @@
       watchAdBtn.innerHTML = '<i class="fas fa-play"></i> Tonton Iklan';
       claimBtn.disabled = true;
     }
+
+    // Simpan progress ke localStorage
+    localStorage.setItem('watchCount', watchCount);
   }
 
   // ===== TONTON IKLAN =====
   function watchAd() {
     if (watchCount >= targetCount) return;
 
-    // Disable tombol sementara
-    watchAdBtn.disabled = true;
-    watchAdBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memutar iklan...';
+    // Tambah counter
+    watchCount++;
+    localStorage.setItem('watchCount', watchCount);
+    updateUI();
 
-    // 🔴 Popunder otomatis muncul dari script Adsterra
-    // 🔴 Kita hanya kasih delay biar user nunggu "nonton"
-    setTimeout(function() {
-      watchCount++;
-      updateUI();
-
-      watchAdBtn.disabled = false;
-      watchAdBtn.innerHTML = '<i class="fas fa-play"></i> Tonton Iklan';
-
-      if (watchCount >= targetCount) {
-        watchAdBtn.disabled = true;
-        watchAdBtn.innerHTML = '<i class="fas fa-check"></i> Selesai!';
-      }
-    }, 2500); // Simulasi nonton iklan 2.5 detik
+    // Reload halaman biar popunder muncul lagi
+    window.location.href = 'iklan-claim.html?reload=' + Date.now();
   }
 
   // ===== CLAIM AM PREM =====
@@ -340,7 +325,22 @@
       alert("Tonton dulu 5 iklan!");
       return;
     }
-    window.location.href = 'claim-am-prem.html';
+
+    // Ambil data dari localStorage
+    const nama = localStorage.getItem('claim_nama') || 'Tidak diketahui';
+    const tiktok = localStorage.getItem('claim_tiktok') || 'Tidak diketahui';
+
+    // Buat pesan WhatsApp
+    const pesan = `CLAIM AM PREM FREE\n\n👤 Nama: ${nama}\n📱 TikTok: ${tiktok}\n⏰ Waktu: ${new Date().toLocaleString('id-ID')}`;
+    const encodedPesan = encodeURIComponent(pesan);
+    const waLink = `https://wa.me/6285782195122?text=${encodedPesan}`;
+
+    // Reset localStorage
+    localStorage.removeItem('watchCount');
+    localStorage.removeItem('claim_nama');
+    localStorage.removeItem('claim_tiktok');
+
+    window.open(waLink, '_blank');
   }
 
   // ===== EVENT LISTENER =====
@@ -350,13 +350,7 @@
   // ===== INISIALISASI =====
   updateUI();
   console.log("Halaman Tonton Iklan siap - Popunder Aktif!");
-
-  // ===== AMBIL DATA DARI LOCALSTORAGE =====
-const namaClaim = localStorage.getItem('claim_nama') || 'Tidak diketahui';
-const tiktokClaim = localStorage.getItem('claim_tiktok') || 'Tidak diketahui';
-
-console.log('Data Claim:', namaClaim, tiktokClaim);
 </script>
 
 </body>
-          </html>
+</html>
