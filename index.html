@@ -10,6 +10,33 @@
 </head>
 <body>
 
+<!-- HAMBURGER MENU -->
+<div class="menu-toggle" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+
+<!-- SIDE MENU -->
+<div id="sideMenu" class="side-menu">
+  <div class="menu-header">
+    <span>XNR MENU</span>
+  <span class="menu-close" onclick="toggleMenu()">&times;</span>
+</div>
+<div class="menu-items">
+    <div class="menu-item" onclick="claimAmPrem()">
+      <i class="fas fa-gift"></i> Claim AM Prem Free
+    </div>
+    <div class="menu-item" onclick="penciptaWeb()">
+      <i class="fas fa-code"></i> Pencipta Web
+    </div>
+    <div class="menu-item" onclick="tentangXnr()">
+      <i class="fas fa-info-circle"></i> Tentang XNR
+    </div>
+  </div>
+</div>
+
+<!-- OVERLAY -->
+<div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
 <audio id="bgAudio" src="musikxputz.mp3" loop preload="auto"></audio>
 
 <div class="container">
@@ -256,4 +283,4 @@
 
 <script src="script.js"></script>
 </body>
-    </html>
+        </html>
