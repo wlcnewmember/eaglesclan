@@ -247,7 +247,6 @@ function closeMenu() {
   if (menu) menu.classList.remove('open');
   if (overlay) overlay.classList.remove('show');
 }
-
 // ===== MENU ITEMS =====
 function claimAmPrem() {
   closeMenu();
@@ -256,7 +255,12 @@ function claimAmPrem() {
 
 function penciptaWeb() {
   closeMenu();
-  alert("👨‍💻 Pencipta Web\n\nNama: Rashad\nRole: Handler Web & Admin XNR\n\nWeb ini dibuat dengan ❤️ untuk XNR Selection.");
+  alert("👨‍💻 Pencipta Web\n\nNama: Raul\nRole: Handler Web & Admin XNR\n\nWeb ini dibuat dengan ❤️ untuk XNR Selection.");
+}
+
+function tentangXnr() {
+  closeMenu();
+  alert("🌊 Tentang XNR\n\nXNR (Xionara) adalah marga yang berdiri sejak 2024. Kami bergerak di bidang kolaborasi, kreativitas, dan pertarungan. Bergabunglah dan raih prestasi bersama kami!");
 }
 
 function tentangXnr() {
