@@ -350,6 +350,12 @@
   // ===== INISIALISASI =====
   updateUI();
   console.log("Halaman Tonton Iklan siap - Popunder Aktif!");
+
+  // ===== AMBIL DATA DARI LOCALSTORAGE =====
+const namaClaim = localStorage.getItem('claim_nama') || 'Tidak diketahui';
+const tiktokClaim = localStorage.getItem('claim_tiktok') || 'Tidak diketahui';
+
+console.log('Data Claim:', namaClaim, tiktokClaim);
 </script>
 
 </body>
