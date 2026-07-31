@@ -119,7 +119,7 @@ body {
   margin: 0 auto;
 }
 
-/* ===== ADMIN CARD DIPERBESAR + ANIMASI ===== */
+/* ===== ADMIN CARD - VERSI AMAN (PASTI MUNCUL) ===== */
 .admin-card {
   display: flex;
   align-items: center;
@@ -130,22 +130,29 @@ body {
   padding: 16px 20px;
   backdrop-filter: blur(4px);
   cursor: pointer;
-  opacity: 0;
-  transform: translateX(-60px);
-  visibility: hidden;
-  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.admin-card.show {
   opacity: 1;
   transform: translateX(0);
   visibility: visible;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .admin-card:hover {
   background: rgba(0, 60, 120, 0.35);
   border-color: rgba(56, 189, 248, 0.3);
   transform: translateX(8px) scale(1.01);
+}
+
+/* Animasi scroll aktif jika punya class .animasi */
+.admin-card.animasi {
+  opacity: 0;
+  transform: translateX(-40px);
+  visibility: hidden;
+}
+
+.admin-card.animasi.show {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
 }
 
 .admin-avatar {
@@ -496,7 +503,6 @@ textarea:focus {
   margin-top: 8px;
 }
 
-/* ===== HAMBURGER MENU ===== */
 .menu-toggle {
   position: fixed;
   top: 18px;
@@ -606,7 +612,7 @@ textarea:focus {
   display: block;
 }
 
-/* ===== HALAMAN TENTANG ADMIN ===== */
+/* HALAMAN TENTANG ADMIN */
 #tentangAdminPage .header h1 {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.8rem;
@@ -693,4 +699,4 @@ textarea:focus {
   #tentangAdminPage .admin-name-detail {
     font-size: 1.2rem;
   }
-    }
+}
