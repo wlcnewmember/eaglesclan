@@ -114,33 +114,43 @@ body {
 .admin-grid {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  max-width: 480px;
+  gap: 12px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
+/* ===== ADMIN CARD DIPERBESAR + ANIMASI ===== */
 .admin-card {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   background: rgba(0, 40, 80, 0.25);
   border: 1px solid rgba(56, 189, 248, 0.08);
-  border-radius: 14px;
-  padding: 8px 14px;
-  transition: 0.3s;
+  border-radius: 20px;
+  padding: 16px 20px;
   backdrop-filter: blur(4px);
   cursor: pointer;
+  opacity: 0;
+  transform: translateX(-60px);
+  visibility: hidden;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.admin-card.show {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
 }
 
 .admin-card:hover {
-  background: rgba(0, 60, 120, 0.3);
-  border-color: rgba(56, 189, 248, 0.25);
-  transform: translateX(6px);
+  background: rgba(0, 60, 120, 0.35);
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateX(8px) scale(1.01);
 }
 
 .admin-avatar {
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid #0ea5e9;
@@ -159,21 +169,21 @@ body {
 }
 
 .admin-name {
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #7dd3fc;
   letter-spacing: 0.5px;
 }
 
 .admin-role {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: #8ab4d6;
 }
 
 .admin-detail {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   color: #6a8aaa;
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
 .last-admin {
@@ -508,7 +518,6 @@ textarea:focus {
   transform: scale(1.05);
 }
 
-/* SIDE MENU */
 .side-menu {
   position: fixed;
   top: 0;
@@ -581,7 +590,6 @@ textarea:focus {
   font-size: 1.1rem;
 }
 
-/* OVERLAY */
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -663,20 +671,20 @@ textarea:focus {
     height: 85px;
   }
   .admin-card {
-    padding: 6px 12px;
+    padding: 12px 14px;
   }
   .admin-avatar {
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
   }
   .admin-name {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
   .admin-role {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
   .admin-detail {
-    font-size: 0.55rem;
+    font-size: 0.6rem;
   }
   .motto {
     font-size: 0.8rem;
@@ -685,4 +693,4 @@ textarea:focus {
   #tentangAdminPage .admin-name-detail {
     font-size: 1.2rem;
   }
-  }
+    }
