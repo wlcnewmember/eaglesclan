@@ -273,16 +273,34 @@ function animasiCardAdmin() {
 
     if (cardTop < windowHeight - triggerPoint) {
       setTimeout(function() {
+        card.classList.add('animasi');
         card.classList.add('show');
-      }, index * 120);
+      }, index * 150);
     }
   });
 }
 
-// Jalankan saat halaman di-load & di-scroll
-window.addEventListener('load', animasiCardAdmin);
+// ===== FALLBACK: PASTIKAN CARD MUNCUL (JIKA JS GAGAL) =====
+function fallbackShowCards() {
+  var cards = document.querySelectorAll('.admin-card');
+  if (cards.length > 0) {
+    cards.forEach(function(card) {
+      card.classList.add('animasi');
+      card.classList.add('show');
+    });
+  }
+}
+
+// Jalankan animasi saat load & scroll
+window.addEventListener('load', function() {
+  setTimeout(animasiCardAdmin, 500);
+});
+
 window.addEventListener('scroll', animasiCardAdmin);
 window.addEventListener('resize', animasiCardAdmin);
+
+// Fallback: tampilkan semua card setelah 2 detik (jika ada yang gagal)
+setTimeout(fallbackShowCards, 2500);
 
 // ===== INISIALISASI =====
 updateVerifikasiBtn();
