@@ -147,31 +147,6 @@
       background: linear-gradient(135deg, #38bdf8, #0284c7);
     }
 
-    .btn-secondary {
-      background: rgba(14, 165, 233, 0.12);
-      border: 1px solid rgba(56, 189, 248, 0.15);
-      color: white;
-      font-weight: 600;
-      font-size: 0.9rem;
-      padding: 12px 22px;
-      border-radius: 60px;
-      width: 100%;
-      cursor: pointer;
-      transition: 0.3s;
-      margin-top: 10px;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(14, 165, 233, 0.25);
-      border-color: #38bdf8;
-    }
-
-    .btn-secondary:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-      transform: none;
-    }
-
     .back-link {
       text-align: center;
       margin-top: 18px;
@@ -266,7 +241,7 @@
 
   <div class="info-box">
     <p><i class="fas fa-info-circle"></i> Isi data berikut untuk mengklaim AM Premium.</p>
-    <p style="font-size: 0.8rem; color: #6a8aaa; margin-top: 6px;">Pastikan data benar agar proses verifikasi berjalan lancar.</p>
+    <p style="font-size: 0.8rem; color: #6a8aaa; margin-top: 6px;">Setelah submit, kamu akan diarahkan ke halaman tonton iklan.</p>
   </div>
 
   <form id="claimForm">
@@ -281,7 +256,7 @@
     </div>
 
     <button type="submit" class="btn-primary">
-      <i class="fab fa-whatsapp"></i> KIRIM CLAIM VIA WA
+      <i class="fas fa-play-circle"></i> TONTON IKLAN DULU
     </button>
   </form>
 
@@ -304,7 +279,11 @@
 
 <script>
   // ===== KONFIGURASI =====
-  const NOMOR_WA = "6285782195122";
+  // Simpan data di localStorage biar bisa dipakai di halaman iklan
+  function simpanDataClaim(nama, tiktok) {
+    localStorage.setItem('claim_nama', nama);
+    localStorage.setItem('claim_tiktok', tiktok);
+  }
 
   // ===== LOADING =====
   function showLoading() {
@@ -325,24 +304,19 @@
     if (!nama) { alert("Masukkan nama lengkap!"); return; }
     if (!tiktok) { alert("Masukkan username TikTok!"); return; }
 
+    // Simpan data ke localStorage
+    simpanDataClaim(nama, tiktok);
+
     showLoading();
 
-    var pesan = `CLAIM AM PREM FREE\n\n`;
-    pesan += `👤 Nama: ${nama}\n`;
-    pesan += `📱 TikTok: ${tiktok}\n`;
-    pesan += `⏰ Waktu: ${new Date().toLocaleString('id-ID')}`;
-
-    var encodedPesan = encodeURIComponent(pesan);
-    var waLink = `https://wa.me/${NOMOR_WA}?text=${encodedPesan}`;
-
+    // Redirect ke halaman tonton iklan
     setTimeout(function() {
       hideLoading();
-      window.open(waLink, '_blank');
-      document.getElementById('claimForm').reset();
+      window.location.href = 'iklan-claim.html';
     }, 1500);
   });
 
-  console.log("Claim AM Prem Free siap - langsung ke WA!");
+  console.log("Claim AM Prem Free siap - redirect ke iklan!");
 </script>
 
 </body>
