@@ -486,7 +486,119 @@ textarea:focus {
   margin-top: 8px;
 }
 
-/* ===== HALAMAN TENTANG ADMIN (FONT BAGUS) ===== */
+/* ===== HAMBURGER MENU ===== */
+.menu-toggle {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 100;
+  font-size: 1.8rem;
+  color: #7dd3fc;
+  cursor: pointer;
+  transition: 0.3s;
+  background: rgba(0, 20, 40, 0.6);
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.menu-toggle:hover {
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* SIDE MENU */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 280px;
+  height: 100%;
+  background: rgba(8, 20, 40, 0.95);
+  backdrop-filter: blur(16px);
+  border-right: 1px solid rgba(56, 189, 248, 0.15);
+  z-index: 200;
+  transition: left 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  padding: 20px 0;
+  box-shadow: 4px 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 15px 20px;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  color: #7dd3fc;
+  letter-spacing: 2px;
+}
+
+.menu-close {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #6a8aaa;
+  transition: 0.2s;
+}
+
+.menu-close:hover {
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.menu-items {
+  padding: 20px 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 22px;
+  font-size: 1rem;
+  color: #b8d4e6;
+  cursor: pointer;
+  transition: 0.2s;
+  border-left: 3px solid transparent;
+  font-weight: 500;
+}
+
+.menu-item:hover {
+  background: rgba(56, 189, 248, 0.08);
+  border-left: 3px solid #0ea5e9;
+  color: #ffffff;
+}
+
+.menu-item i {
+  width: 24px;
+  color: #38bdf8;
+  font-size: 1.1rem;
+}
+
+/* OVERLAY */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 150;
+  display: none;
+  backdrop-filter: blur(4px);
+}
+
+.menu-overlay.show {
+  display: block;
+}
+
+/* ===== HALAMAN TENTANG ADMIN ===== */
 #tentangAdminPage .header h1 {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.8rem;
