@@ -229,10 +229,14 @@ function bukaTentangAdmin(adminId) {
   showPage('tentangAdminPage');
 }
 
-// ===== MENU HAMBURGER =====
+// ===== MENU HAMBURGER (DIPERBAIKI) =====
 function toggleMenu() {
   var menu = document.getElementById('sideMenu');
   var overlay = document.getElementById('menuOverlay');
+  if (!menu || !overlay) {
+    console.error("Menu atau overlay tidak ditemukan!");
+    return;
+  }
   menu.classList.toggle('open');
   overlay.classList.toggle('show');
 }
@@ -240,8 +244,8 @@ function toggleMenu() {
 function closeMenu() {
   var menu = document.getElementById('sideMenu');
   var overlay = document.getElementById('menuOverlay');
-  menu.classList.remove('open');
-  overlay.classList.remove('show');
+  if (menu) menu.classList.remove('open');
+  if (overlay) overlay.classList.remove('show');
 }
 
 // ===== MENU ITEMS =====
