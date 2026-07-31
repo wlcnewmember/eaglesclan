@@ -302,7 +302,6 @@
       claimBtn.disabled = true;
     }
 
-    // Simpan progress ke localStorage
     localStorage.setItem('watchCount', watchCount);
   }
 
@@ -315,8 +314,14 @@
     localStorage.setItem('watchCount', watchCount);
     updateUI();
 
-    // Reload halaman biar popunder muncul lagi
-    window.location.href = 'iklan-claim.html?reload=' + Date.now();
+    // Disable tombol + loading
+    watchAdBtn.disabled = true;
+    watchAdBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memuat iklan...';
+
+    // Redirect dengan delay 1 detik (biar script kebaca)
+    setTimeout(function() {
+      window.location.href = 'iklan-claim.html?reload=' + Date.now();
+    }, 1000);
   }
 
   // ===== CLAIM AM PREM =====
@@ -326,11 +331,9 @@
       return;
     }
 
-    // Ambil data dari localStorage
     const nama = localStorage.getItem('claim_nama') || 'Tidak diketahui';
     const tiktok = localStorage.getItem('claim_tiktok') || 'Tidak diketahui';
 
-    // Buat pesan WhatsApp
     const pesan = `CLAIM AM PREM FREE\n\n👤 Nama: ${nama}\n📱 TikTok: ${tiktok}\n⏰ Waktu: ${new Date().toLocaleString('id-ID')}`;
     const encodedPesan = encodeURIComponent(pesan);
     const waLink = `https://wa.me/6285782195122?text=${encodedPesan}`;
