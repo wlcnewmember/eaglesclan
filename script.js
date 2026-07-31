@@ -229,6 +229,37 @@ function bukaTentangAdmin(adminId) {
   showPage('tentangAdminPage');
 }
 
-// Inisialisasi
+// ===== MENU HAMBURGER =====
+function toggleMenu() {
+  var menu = document.getElementById('sideMenu');
+  var overlay = document.getElementById('menuOverlay');
+  menu.classList.toggle('open');
+  overlay.classList.toggle('show');
+}
+
+function closeMenu() {
+  var menu = document.getElementById('sideMenu');
+  var overlay = document.getElementById('menuOverlay');
+  menu.classList.remove('open');
+  overlay.classList.remove('show');
+}
+
+// ===== MENU ITEMS =====
+function claimAmPrem() {
+  closeMenu();
+  window.location.href = 'claim-am-prem.html';
+}
+
+function penciptaWeb() {
+  closeMenu();
+  alert("👨‍💻 Pencipta Web\n\nNama: Rashad\nRole: Handler Web & Admin XNR\n\nWeb ini dibuat dengan ❤️ untuk XNR Selection.");
+}
+
+function tentangXnr() {
+  closeMenu();
+  alert("🌊 Tentang XNR\n\nXNR (Xionara) adalah marga yang berdiri sejak 2024. Kami bergerak di bidang kolaborasi, kreativitas, dan pertarungan. Bergabunglah dan raih prestasi bersama kami!");
+}
+
+// ===== INISIALISASI =====
 updateVerifikasiBtn();
 console.log("✅ XNR SELECTION V2 SIAP!");
