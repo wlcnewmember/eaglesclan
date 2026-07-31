@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>🎁 Claim AM Prem Free | XNR</title>
+  <title>Claim AM Prem Free | XNR</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
@@ -52,6 +52,11 @@
       font-weight: 700;
       color: #7dd3fc;
       text-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+    }
+
+    .header h1 i {
+      color: #38bdf8;
+      margin-right: 10px;
     }
 
     .header .sub {
@@ -142,6 +147,31 @@
       background: linear-gradient(135deg, #38bdf8, #0284c7);
     }
 
+    .btn-secondary {
+      background: rgba(14, 165, 233, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 12px 22px;
+      border-radius: 60px;
+      width: 100%;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(14, 165, 233, 0.25);
+      border-color: #38bdf8;
+    }
+
+    .btn-secondary:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      transform: none;
+    }
+
     .back-link {
       text-align: center;
       margin-top: 18px;
@@ -156,6 +186,10 @@
       color: #7dd3fc;
     }
 
+    .back-link i {
+      margin-right: 6px;
+    }
+
     .credit {
       text-align: center;
       margin-top: 25px;
@@ -167,6 +201,7 @@
 
     .credit i {
       color: #38bdf8;
+      margin-right: 4px;
     }
 
     .loading-overlay {
@@ -225,7 +260,7 @@
 <div class="container">
 
   <div class="header">
-    <h1>CLAIM AM PREM FREE</h1>
+    <h1><i class="fas fa-gift"></i> CLAIM AM PREM FREE</h1>
     <div class="sub">Dapatkan Alight Motion Premium Gratis!</div>
   </div>
 
@@ -263,7 +298,7 @@
 <!-- LOADING -->
 <div id="loadingOverlay" class="loading-overlay">
   <div class="loading-spinner"></div>
-  <div class="loading-text">⚡ SABAR, DATA SEDANG DIPROSES</div>
+  <div class="loading-text"><i class="fas fa-hourglass-half"></i> SABAR, DATA SEDANG DIPROSES</div>
   <div class="loading-sub">harap tunggu sebentar...</div>
 </div>
 
@@ -287,12 +322,12 @@
     var nama = document.getElementById('namaClaim').value.trim();
     var tiktok = document.getElementById('tiktokClaim').value.trim();
 
-    if (!nama) { alert("⚠️ Masukkan nama lengkap!"); return; }
-    if (!tiktok) { alert("⚠️ Masukkan username TikTok!"); return; }
+    if (!nama) { alert("Masukkan nama lengkap!"); return; }
+    if (!tiktok) { alert("Masukkan username TikTok!"); return; }
 
     showLoading();
 
-    var pesan = `🎁 *CLAIM AM PREM FREE* 🎁\n\n`;
+    var pesan = `CLAIM AM PREM FREE\n\n`;
     pesan += `👤 Nama: ${nama}\n`;
     pesan += `📱 TikTok: ${tiktok}\n`;
     pesan += `⏰ Waktu: ${new Date().toLocaleString('id-ID')}`;
@@ -307,7 +342,8 @@
     }, 1500);
   });
 
-  console.log("✅ Claim AM Prem Free siap - langsung ke WA!");
+  console.log("Claim AM Prem Free siap - langsung ke WA!");
 </script>
+
 </body>
 </html>
