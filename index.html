@@ -211,19 +211,19 @@
       color: #c9a84c;
     }
 
-    /* ===== ADMIN CAROUSEL (DI HOME) ===== */
+    /* ===== ADMIN CAROUSEL ===== */
     .admin-carousel {
       position: relative;
       max-width: 700px;
       margin: 0 auto 20px;
       overflow: hidden;
-      padding: 0 30px;
+      padding: 0 40px;
     }
 
     .admin-track {
       display: flex;
       gap: 20px;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       padding: 10px 0;
     }
 
@@ -237,6 +237,7 @@
       border: 1px solid rgba(201, 168, 76, 0.08);
       transition: 0.3s;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+      flex-shrink: 0;
     }
 
     .admin-card:hover {
@@ -276,29 +277,34 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(201, 168, 76, 0.12);
+      background: rgba(201, 168, 76, 0.15);
       border: 1px solid rgba(201, 168, 76, 0.1);
       color: #c9a84c;
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       cursor: pointer;
       transition: 0.3s;
       z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
     }
 
     .carousel-btn:hover {
-      background: rgba(201, 168, 76, 0.2);
+      background: rgba(201, 168, 76, 0.25);
     }
 
     .carousel-btn.prev {
-      left: -6px;
+      left: 0;
     }
 
     .carousel-btn.next {
-      right: -6px;
+      right: 0;
     }
 
+    /* ===== PAGE LAIN ===== */
     .page-header {
       text-align: center;
       margin-bottom: 30px;
@@ -438,11 +444,10 @@
         max-width: 100%;
         padding: 0 20px;
       }
-      .carousel-btn.prev {
-        left: -2px;
-      }
-      .carousel-btn.next {
-        right: -2px;
+      .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
       }
       .admin-card {
         min-width: 130px;
@@ -484,7 +489,7 @@
       </div>
     </div>
 
-    <!-- ===== HOME (dengan Carousel Admin) ===== -->
+    <!-- ===== HOME ===== -->
     <div id="homePage" class="page active">
       <div class="hero">
         <div class="logo-icon"><i class="fas fa-crown"></i></div>
@@ -500,7 +505,7 @@
         </button>
       </div>
 
-      <!-- ===== CAROUSEL ADMIN (DI HOME) ===== -->
+      <!-- ===== CAROUSEL ADMIN ===== -->
       <div class="section-title">Admin <span>Eagle`s Clan</span></div>
       <div class="admin-carousel">
         <button class="carousel-btn prev" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
@@ -617,6 +622,7 @@
     const adminCards = document.querySelectorAll('.admin-card');
     const track = document.getElementById('adminTrack');
     let visibleCount = 3;
+    let autoSlideInterval = null;
 
     function updateCarousel() {
       const cardWidth = adminCards[0].offsetWidth + 20;
@@ -629,6 +635,7 @@
       const maxIndex = Math.max(0, adminCards.length - visibleCount);
       currentIndex = Math.max(0, Math.min(maxIndex, currentIndex + direction));
       updateCarousel();
+      resetAutoSlide();
     }
 
     function updateVisibleCount() {
@@ -640,6 +647,27 @@
       updateCarousel();
     }
 
+    function resetAutoSlide() {
+      if (autoSlideInterval) {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = null;
+      }
+      startAutoSlide();
+    }
+
+    function startAutoSlide() {
+      if (autoSlideInterval) clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(() => {
+        const maxIndex = Math.max(0, adminCards.length - visibleCount);
+        if (currentIndex >= maxIndex) {
+          currentIndex = 0;
+        } else {
+          currentIndex++;
+        }
+        updateCarousel();
+      }, 3000);
+    }
+
     window.addEventListener('resize', () => {
       updateVisibleCount();
       updateCarousel();
@@ -648,6 +676,7 @@
     setTimeout(() => {
       updateVisibleCount();
       updateCarousel();
+      startAutoSlide();
     }, 100);
 
     // ===== DAFTAR SELEKSI =====
