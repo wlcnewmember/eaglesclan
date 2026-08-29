@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Eagle`s Clan | Official</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     * {
@@ -14,14 +14,13 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', sans-serif;
       background: #0d0806;
       color: #f5f0e8;
       min-height: 100vh;
       overflow-x: hidden;
     }
 
-    /* ===== BACKGROUND ===== */
     .bg-eagle {
       position: fixed;
       top: 0;
@@ -29,7 +28,7 @@
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: radial-gradient(ellipse at 30% 20%, #2a1a0a, #0d0806 70%);
+      background: radial-gradient(ellipse at 30% 20%, #1a0e08, #0d0806 70%);
     }
 
     .bg-eagle::before {
@@ -44,69 +43,67 @@
     }
 
     @keyframes goldFloat {
-      0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-      100% { transform: translate(40px, 30px) scale(1.06) rotate(2deg); }
+      0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+      }
+      100% {
+        transform: translate(40px, 30px) scale(1.06) rotate(2deg);
+      }
     }
 
-    /* ===== CONTAINER ===== */
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 30px 20px 60px;
       position: relative;
       z-index: 2;
     }
 
-    /* ===== NAVBAR ===== */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       flex-wrap: wrap;
       gap: 16px;
     }
 
     .navbar .brand {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.2rem;
+      font-size: 1.5rem;
+      font-weight: 800;
       color: #c9a84c;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
     }
 
     .navbar .brand i {
-      color: #c9a84c;
       margin-right: 8px;
     }
 
     .nav-links {
       display: flex;
-      gap: 16px;
+      gap: 8px;
       flex-wrap: wrap;
     }
 
     .nav-links a {
       color: #b0a090;
       text-decoration: none;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      padding: 6px 16px;
+      padding: 8px 18px;
       border-radius: 30px;
       transition: 0.3s;
-      border: 1px solid transparent;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: rgba(201, 168, 76, 0.06);
-      border-color: #c9a84c;
+      background: rgba(201, 168, 76, 0.08);
       color: #c9a84c;
     }
 
-    /* ===== PAGE ===== */
     .page {
       display: none;
-      animation: fadeIn 0.6s ease;
+      animation: fadeIn 0.5s ease;
     }
 
     .page.active {
@@ -114,18 +111,23 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    /* ===== HERO ===== */
     .hero {
       text-align: center;
       padding: 40px 20px 30px;
     }
 
     .hero .logo-icon {
-      font-size: 4.5rem;
+      font-size: 4rem;
       color: #c9a84c;
       margin-bottom: 15px;
       display: inline-block;
@@ -133,16 +135,20 @@
     }
 
     @keyframes floatEagle {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     .hero h1 {
-      font-family: 'Great Vibes', cursive;
       font-size: 3.8rem;
+      font-weight: 800;
       color: #c9a84c;
       letter-spacing: 2px;
-      text-shadow: 0 0 40px rgba(201, 168, 76, 0.08);
     }
 
     .hero .sub {
@@ -150,7 +156,7 @@
       color: #b0a090;
       letter-spacing: 6px;
       text-transform: uppercase;
-      font-weight: 300;
+      font-weight: 400;
       margin-top: 5px;
     }
 
@@ -159,10 +165,10 @@
       font-style: italic;
       color: #d4c5a0;
       max-width: 500px;
-      margin: 25px auto 0;
+      margin: 25px auto;
       padding: 16px 0;
-      border-top: 1px solid rgba(201, 168, 76, 0.1);
-      border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+      border-top: 1px solid rgba(201, 168, 76, 0.08);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.08);
       font-weight: 300;
     }
 
@@ -171,114 +177,169 @@
       margin: 0 8px;
     }
 
-    /* ===== CARD GRID ===== */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: rgba(20, 12, 8, 0.6);
-      backdrop-filter: blur(12px);
-      border-radius: 24px;
-      border: 1px solid rgba(201, 168, 76, 0.06);
-      padding: 28px 18px;
-      text-align: center;
-      transition: 0.4s ease;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(201, 168, 76, 0.2);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .card .icon {
-      font-size: 2.2rem;
-      color: #c9a84c;
-      margin-bottom: 10px;
-    }
-
-    .card h3 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 1.8rem;
-      color: #f5f0e8;
-      margin-bottom: 6px;
-    }
-
-    .card p {
-      font-size: 0.8rem;
-      color: #b0a090;
-      line-height: 1.6;
-      font-weight: 300;
-    }
-
-    .card .btn-gold {
+    .btn-primary {
       background: linear-gradient(135deg, #c9a84c, #a88830);
       border: none;
       color: #0d0806;
-      font-weight: 600;
-      font-size: 0.8rem;
-      padding: 8px 20px;
-      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 14px 36px;
+      border-radius: 60px;
       cursor: pointer;
       transition: 0.3s;
-      margin-top: 12px;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
-    .card .btn-gold:hover {
-      transform: scale(1.04);
-      box-shadow: 0 6px 20px rgba(201, 168, 76, 0.15);
+    .btn-primary:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 24px rgba(201, 168, 76, 0.15);
     }
 
-    /* ===== COUPLE ===== */
-    .couple-special {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-      margin-top: 10px;
+    .page-header {
+      text-align: center;
+      margin-bottom: 30px;
     }
 
-    .couple-special .card {
-      padding: 25px 15px;
+    .page-header h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #c9a84c;
     }
 
-    .couple-special .card .avatar {
-      width: 100px;
-      height: 100px;
+    .page-header p {
+      font-size: 0.8rem;
+      color: #b0a090;
+      letter-spacing: 2px;
+      margin-top: 4px;
+    }
+
+    .about-content {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.8;
+      color: #d4c5a0;
+    }
+
+    .about-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #c9a84c;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      color: #8a7a6a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .admin-carousel {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .admin-track {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.5s ease;
+      padding: 10px 0;
+    }
+
+    .admin-card {
+      min-width: 160px;
+      background: rgba(20, 12, 8, 0.5);
+      border-radius: 20px;
+      padding: 20px 16px;
+      text-align: center;
+      border: 1px solid rgba(201, 168, 76, 0.06);
+      transition: 0.3s;
+    }
+
+    .admin-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201, 168, 76, 0.15);
+    }
+
+    .admin-avatar {
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       overflow: hidden;
-      margin: 0 auto 12px;
-      border: 3px solid #c9a84c;
-      box-shadow: 0 0 30px rgba(201, 168, 76, 0.05);
+      margin: 0 auto 10px;
+      border: 2px solid #c9a84c;
     }
 
-    .couple-special .card .avatar img {
+    .admin-avatar img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .couple-special .card .name {
-      font-family: 'Great Vibes', cursive;
-      font-size: 1.8rem;
-      color: #c9a84c;
+    .admin-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #f5f0e8;
     }
 
-    .couple-special .card .role {
-      font-size: 0.65rem;
+    .admin-role {
+      font-size: 0.7rem;
       color: #b0a090;
-      letter-spacing: 3px;
-      text-transform: uppercase;
+      font-weight: 400;
     }
 
-    /* ===== FORM ===== */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(201, 168, 76, 0.1);
+      border: 1px solid rgba(201, 168, 76, 0.1);
+      color: #c9a84c;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 5;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(201, 168, 76, 0.2);
+    }
+
+    .carousel-btn.prev {
+      left: -20px;
+    }
+
+    .carousel-btn.next {
+      right: -20px;
+    }
+
+    .form-card {
+      max-width: 500px;
+      margin: 0 auto;
+      background: rgba(20, 12, 8, 0.4);
+      border-radius: 24px;
+      padding: 30px;
+      border: 1px solid rgba(201, 168, 76, 0.04);
+    }
+
     .form-group {
       margin-bottom: 1.2rem;
       text-align: left;
@@ -298,35 +359,28 @@
       color: #c9a84c;
     }
 
-    input,
-    textarea {
+    input {
       width: 100%;
       padding: 12px 16px;
       background: rgba(20, 12, 8, 0.5);
       border: 1px solid rgba(201, 168, 76, 0.06);
-      border-radius: 16px;
+      border-radius: 14px;
       color: #f5f0e8;
       font-size: 0.85rem;
       outline: none;
       transition: 0.3s;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', sans-serif;
     }
 
-    input:focus,
-    textarea:focus {
+    input:focus {
       border-color: #c9a84c;
       box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.04);
       background: rgba(20, 12, 8, 0.7);
     }
 
-    textarea {
-      resize: vertical;
-    }
-
-    /* ===== BACK LINK ===== */
     .back-link {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 24px;
       font-size: 0.75rem;
       color: #5a4a3a;
       cursor: pointer;
@@ -343,7 +397,7 @@
 
     .credit {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 50px;
       font-size: 0.6rem;
       color: #2a1a0a;
       border-top: 1px solid rgba(201, 168, 76, 0.03);
@@ -354,165 +408,250 @@
       color: #c9a84c;
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 640px) {
-      .hero h1 { font-size: 2.6rem; }
-      .couple-special { grid-template-columns: 1fr; }
-      .navbar { flex-direction: column; align-items: center; }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+      .admin-carousel {
+        max-width: 100%;
+      }
+      .carousel-btn.prev {
+        left: -6px;
+      }
+      .carousel-btn.next {
+        right: -6px;
+      }
+      .admin-card {
+        min-width: 130px;
+        padding: 16px 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .about-stats {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .admin-card {
+        min-width: 110px;
+      }
     }
   </style>
 </head>
 <body>
 
-<div class="bg-eagle"></div>
+  <div class="bg-eagle"></div>
 
-<div class="container">
+  <div class="container">
 
-  <!-- ===== NAVBAR ===== -->
-  <div class="navbar">
-    <div class="brand"><i class="fas fa-crown"></i> Eagle`s Clan</div>
-    <div class="nav-links">
-      <a href="#" class="active" onclick="showPage('homePage')">Home</a>
-      <a href="#" onclick="showPage('aboutPage')">Tentang</a>
-      <a href="#" onclick="showPage('memberPage')">Anggota</a>
-      <a href="#" onclick="showPage('seleksiPage')">Seleksi</a>
+    <!-- ===== NAVBAR ===== -->
+    <div class="navbar">
+      <div class="brand"><i class="fas fa-crown"></i> Eagle`s Clan</div>
+      <div class="nav-links">
+        <a href="#" class="active" onclick="showPage('homePage')">Home</a>
+        <a href="#" onclick="showPage('aboutPage')">Tentang</a>
+        <a href="#" onclick="showPage('adminPage')">Admin</a>
+        <a href="#" onclick="showPage('seleksiPage')">Seleksi</a>
+      </div>
     </div>
+
+    <!-- ===== HOME ===== -->
+    <div id="homePage" class="page active">
+      <div class="hero">
+        <div class="logo-icon"><i class="fas fa-crown"></i></div>
+        <h1>Eagle`s Clan</h1>
+        <div class="sub">Official Selection</div>
+        <div class="motto">
+          <i class="fas fa-quote-left"></i>
+          "Kejayaan bukan datang sendiri, tetapi dibangun bersama."
+          <i class="fas fa-quote-right"></i>
+        </div>
+        <button class="btn-primary" onclick="showPage('seleksiPage')">
+          <i class="fas fa-arrow-right"></i> DAFTAR SEKARANG
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== TENTANG ===== -->
+    <div id="aboutPage" class="page">
+      <div class="page-header">
+        <h2>Tentang Eagle`s Clan</h2>
+        <p>Komunitas eksklusif berbasis kehormatan & prestasi</p>
+      </div>
+      <div class="about-content">
+        <p>
+          Eagle`s Clan adalah komunitas yang didirikan untuk menjunjung tinggi nilai
+          <strong>kehormatan, persaudaraan, dan prestasi</strong>. Kami adalah keluarga
+          bagi mereka yang berani bermimpi dan berani melangkah.
+        </p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-number">2024</span>
+            <span class="stat-label">Tahun Berdiri</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">7</span>
+            <span class="stat-label">Admin Aktif</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Anggota</span>
+          </div>
+        </div>
+      </div>
+      <div class="back-link" onclick="showPage('homePage')"><i class="fas fa-arrow-left"></i> Kembali</div>
+    </div>
+
+    <!-- ===== ADMIN (CAROUSEL) ===== -->
+    <div id="adminPage" class="page">
+      <div class="page-header">
+        <h2>Admin Eagle`s Clan</h2>
+        <p>Pengurus & pendiri komunitas</p>
+      </div>
+
+      <div class="admin-carousel">
+        <button class="carousel-btn prev" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
+        <div class="admin-track" id="adminTrack">
+          <div class="admin-card">
+            <div class="admin-avatar"><img src="raul.jpg" alt="Raul"></div>
+            <div class="admin-name">Raul</div>
+            <div class="admin-role">Founder</div>
+          </div>
+          <div class="admin-card">
+            <div class="admin-avatar"><img src="kayeye.jpg" alt="Kayeye"></div>
+            <div class="admin-name">Kayeye</div>
+            <div class="admin-role">Co-Founder</div>
+          </div>
+          <div class="admin-card">
+            <div class="admin-avatar"><img src="xion.jpg" alt="Xion"></div>
+            <div class="admin-name">Xion</div>
+            <div class="admin-role">Admin</div>
+          </div>
+          <div class="admin-card">
+            <div class="admin-avatar"><img src="reyiz.jpg" alt="Reyiz"></div>
+            <div class="admin-name">Reyiz</div>
+            <div class="admin-role">Admin</div>
+          </div>
+          <div class="admin-card">
+            <div class="admin-avatar"><img src="voltar.jpg" alt="Voltar"></div>
+            <div class="admin-name">Voltar</div>
+            <div class="admin-role">Admin</div>
+          </div>
+          <div class="admin-card">
+            <div class="admin-avatar"><img src="rasyid.jpg" alt="Rasyid"></div>
+            <div class="admin-name">Rasyid</div>
+            <div class="admin-role">Admin</div>
+          </div>
+          <div class="admin-card">
+            <div class="admin-avatar"><img src="marvel.jpg" alt="Marvel"></div>
+            <div class="admin-name">Marvel</div>
+            <div class="admin-role">Admin</div>
+          </div>
+        </div>
+        <button class="carousel-btn next" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
+      </div>
+
+      <div class="back-link" onclick="showPage('homePage')"><i class="fas fa-arrow-left"></i> Kembali</div>
+    </div>
+
+    <!-- ===== SELEKSI ===== -->
+    <div id="seleksiPage" class="page">
+      <div class="page-header">
+        <h2>Seleksi Anggota</h2>
+        <p>Gabung menjadi bagian dari Eagle`s Clan</p>
+      </div>
+      <div class="form-card">
+        <div class="form-group">
+          <label><i class="fas fa-user"></i> Nama Lengkap</label>
+          <input type="text" id="nama" placeholder="Nama Anda">
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-calendar-alt"></i> Umur</label>
+          <input type="text" id="umur" placeholder="19 / 22 / 27">
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-pen-fancy"></i> Skill / Keahlian</label>
+          <input type="text" id="skill" placeholder="Editor / Desainer / Gamer">
+        </div>
+        <button class="btn-primary" id="btnDaftar" style="width:100%; justify-content:center;"><i class="fas fa-paper-plane"></i> DAFTAR SEKARANG</button>
+      </div>
+      <div class="back-link" onclick="showPage('homePage')"><i class="fas fa-arrow-left"></i> Kembali</div>
+    </div>
+
+    <div class="credit"><i class="fas fa-copyright"></i> 2026 • Eagle`s Clan</div>
   </div>
 
-  <!-- ===== HOME ===== -->
-  <div id="homePage" class="page active">
-    <div class="hero">
-      <div class="logo-icon"><i class="fas fa-crown"></i></div>
-      <h1>Eagle`s Clan</h1>
-      <div class="sub">Official Selection</div>
-      <div class="motto">
-        <i class="fas fa-quote-left"></i>
-        "Kejayaan bukan datang sendiri, tetapi dibangun bersama."
-        <i class="fas fa-quote-right"></i>
-      </div>
-    </div>
+  <script>
+    // ===== NAVIGASI =====
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+      const map = { homePage: 0, aboutPage: 1, adminPage: 2, seleksiPage: 3 };
+      if (map[id] !== undefined) document.querySelectorAll('.nav-links a')[map[id]].classList.add('active');
+    }
 
-    <div class="card-grid">
-      <div class="card" onclick="showPage('aboutPage')">
-        <div class="icon"><i class="fas fa-info-circle"></i></div>
-        <h3>Tentang</h3>
-        <p>Kenali lebih dekat Eagle`s Clan</p>
-        <div class="btn-gold"><i class="fas fa-arrow-right"></i> Lihat</div>
-      </div>
-      <div class="card" onclick="showPage('memberPage')">
-        <div class="icon"><i class="fas fa-users"></i></div>
-        <h3>Anggota</h3>
-        <p>Para pendiri & pengurus</p>
-        <div class="btn-gold"><i class="fas fa-arrow-right"></i> Lihat</div>
-      </div>
-      <div class="card" onclick="showPage('seleksiPage')">
-        <div class="icon"><i class="fas fa-clipboard-list"></i></div>
-        <h3>Seleksi</h3>
-        <p>Gabung menjadi anggota</p>
-        <div class="btn-gold"><i class="fas fa-arrow-right"></i> Daftar</div>
-      </div>
-    </div>
-  </div>
+    // ===== CAROUSEL ADMIN =====
+    let currentIndex = 0;
+    const adminCards = document.querySelectorAll('.admin-card');
+    const track = document.getElementById('adminTrack');
+    let visibleCount = 3;
 
-  <!-- ===== TENTANG ===== -->
-  <div id="aboutPage" class="page">
-    <div style="text-align:center; margin-bottom:20px;">
-      <h2 style="font-family:'Great Vibes',cursive; font-size:2.4rem; color:#c9a84c;">Tentang</h2>
-      <p style="color:#b0a090; font-size:0.75rem; letter-spacing:2px;">Eagle`s Clan</p>
-    </div>
-    <div class="card" style="max-width:500px; margin:0 auto;">
-      <div class="icon"><i class="fas fa-crown"></i></div>
-      <p style="color:#d4c5a0; line-height:1.8; margin-bottom:15px;">
-        Eagle`s Clan adalah komunitas eksklusif yang didirikan untuk menjunjung tinggi nilai kehormatan, persaudaraan, dan prestasi. Kami adalah keluarga bagi mereka yang berani bermimpi dan berani melangkah.
-      </p>
-      <p style="font-size:0.8rem; color:#8a7a6a;">
-        <i class="fas fa-map-pin" style="color:#c9a84c;"></i> Berbasis di Indonesia
-      </p>
-    </div>
-    <div class="back-link" onclick="showPage('homePage')"><i class="fas fa-arrow-left"></i> Kembali</div>
-  </div>
+    function updateCarousel() {
+      const cardWidth = adminCards[0].offsetWidth + 20;
+      const maxIndex = Math.max(0, adminCards.length - visibleCount);
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
 
-  <!-- ===== ANGGOTA ===== -->
-  <div id="memberPage" class="page">
-    <div style="text-align:center; margin-bottom:20px;">
-      <h2 style="font-family:'Great Vibes',cursive; font-size:2.4rem; color:#c9a84c;">Anggota</h2>
-      <p style="color:#b0a090; font-size:0.75rem; letter-spacing:2px;">Pengurus</p>
-    </div>
-    <div class="couple-special">
-      <div class="card">
-        <div class="avatar"><img src="https://placehold.co/100x100/1a0e08/c9a84c?text=R" alt="Raul"></div>
-        <div class="name">Raul</div>
-        <div class="role">Founder</div>
-      </div>
-      <div class="card">
-        <div class="avatar"><img src="https://placehold.co/100x100/1a0e08/c9a84c?text=K" alt="Kayeye"></div>
-        <div class="name">Kayeye</div>
-        <div class="role">Co-Founder</div>
-      </div>
-      <div class="card">
-        <div class="avatar"><img src="https://placehold.co/100x100/1a0e08/c9a84c?text=Y" alt="Yonz"></div>
-        <div class="name">Yonz</div>
-        <div class="role">Admin</div>
-      </div>
-      <div class="card">
-        <div class="avatar"><img src="https://placehold.co/100x100/1a0e08/c9a84c?text=N" alt="Novva"></div>
-        <div class="name">Novva</div>
-        <div class="role">Admin</div>
-      </div>
-    </div>
-    <div class="back-link" onclick="showPage('homePage')"><i class="fas fa-arrow-left"></i> Kembali</div>
-  </div>
+    function moveCarousel(direction) {
+      const maxIndex = Math.max(0, adminCards.length - visibleCount);
+      currentIndex = Math.max(0, Math.min(maxIndex, currentIndex + direction));
+      updateCarousel();
+    }
 
-  <!-- ===== SELEKSI ===== -->
-  <div id="seleksiPage" class="page">
-    <div style="text-align:center; margin-bottom:20px;">
-      <h2 style="font-family:'Great Vibes',cursive; font-size:2.4rem; color:#c9a84c;">Seleksi</h2>
-      <p style="color:#b0a090; font-size:0.75rem; letter-spacing:2px;">Gabung Sekarang</p>
-    </div>
-    <div class="card" style="max-width:500px; margin:0 auto;">
-      <div class="icon"><i class="fas fa-user-plus"></i></div>
-      <div class="form-group">
-        <label><i class="fas fa-user"></i> Nama Lengkap</label>
-        <input type="text" id="nama" placeholder="Nama Anda">
-      </div>
-      <div class="form-group">
-        <label><i class="fas fa-calendar-alt"></i> Umur</label>
-        <input type="text" id="umur" placeholder="19 / 22 / 27">
-      </div>
-      <div class="form-group">
-        <label><i class="fas fa-pen-fancy"></i> Skill / Keahlian</label>
-        <input type="text" id="skill" placeholder="Editor / Desainer / Gamer">
-      </div>
-      <button class="btn-gold" id="btnDaftar" style="width:100%; justify-content:center;"><i class="fas fa-paper-plane"></i> DAFTAR SEKARANG</button>
-    </div>
-    <div class="back-link" onclick="showPage('homePage')"><i class="fas fa-arrow-left"></i> Kembali</div>
-  </div>
+    // ===== RESIZE =====
+    function updateVisibleCount() {
+      if (window.innerWidth <= 480) visibleCount = 1;
+      else if (window.innerWidth <= 768) visibleCount = 2;
+      else visibleCount = 3;
+      const maxIndex = Math.max(0, adminCards.length - visibleCount);
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+      updateCarousel();
+    }
 
-  <div class="credit"><i class="fas fa-copyright"></i> 2026 • Eagle`s Clan</div>
-</div>
+    window.addEventListener('resize', () => {
+      updateVisibleCount();
+      updateCarousel();
+    });
 
-<script>
-  function showPage(id) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-    const map = { homePage: 0, aboutPage: 1, memberPage: 2, seleksiPage: 3 };
-    if (map[id] !== undefined) document.querySelectorAll('.nav-links a')[map[id]].classList.add('active');
-  }
+    // ===== INISIALISASI =====
+    setTimeout(() => {
+      updateVisibleCount();
+      updateCarousel();
+    }, 100);
 
-  document.getElementById('btnDaftar').addEventListener('click', function() {
-    const nama = document.getElementById('nama').value.trim();
-    const umur = document.getElementById('umur').value.trim();
-    const skill = document.getElementById('skill').value.trim();
-    if (!nama || !umur || !skill) return alert('Isi semua data!');
-    alert('Terima kasih, ' + nama + '!\nPendaftaran Anda telah diterima.\nTim Eagle`s Clan akan menghubungi Anda.');
-    document.getElementById('nama').value = '';
-    document.getElementById('umur').value = '';
-    document.getElementById('skill').value = '';
-  });
+    // ===== DAFTAR SELEKSI =====
+    document.getElementById('btnDaftar').addEventListener('click', function() {
+      const nama = document.getElementById('nama').value.trim();
+      const umur = document.getElementById('umur').value.trim();
+      const skill = document.getElementById('skill').value.trim();
+      if (!nama || !umur || !skill) return alert('Isi semua data!');
+      alert('Terima kasih, ' + nama + '!\nPendaftaran Anda telah diterima.\nTim Eagle`s Clan akan menghubungi Anda.');
+      document.getElementById('nama').value = '';
+      document.getElementById('umur').value = '';
+      document.getElementById('skill').value = '';
+    });
 
-  console.log('🦅 Eagle`s Clan siap!');
-</script>
+    console.log('🦅 Eagle`s Clan siap!');
+  </script>
 
 </body>
   </html>
