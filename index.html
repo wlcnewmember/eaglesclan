@@ -3,284 +3,516 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>🌊 XNR SELECTION V2 | Official</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Eagle`s Clan | Official</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0d0806;
+      color: #f5f0e8;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ===== BACKGROUND ===== */
+    .bg-eagle {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(ellipse at 30% 20%, #2a1a0a, #0d0806 70%);
+    }
+
+    .bg-eagle::before {
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      top: -30%;
+      left: -30%;
+      background: radial-gradient(circle at 60% 40%, rgba(201, 168, 76, 0.04), transparent 60%);
+      animation: goldFloat 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes goldFloat {
+      0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+      100% { transform: translate(40px, 30px) scale(1.06) rotate(2deg); }
+    }
+
+    /* ===== CONTAINER ===== */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 20px 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .navbar .brand {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      color: #c9a84c;
+      letter-spacing: 2px;
+    }
+
+    .navbar .brand i {
+      color: #c9a84c;
+      margin-right: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #b0a090;
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 30px;
+      transition: 0.3s;
+      border: 1px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(201, 168, 76, 0.06);
+      border-color: #c9a84c;
+      color: #c9a84c;
+    }
+
+    /* ===== PAGE ===== */
+    .page {
+      display: none;
+      animation: fadeIn 0.6s ease;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 40px 20px 30px;
+    }
+
+    .hero .logo-icon {
+      font-size: 4.5rem;
+      color: #c9a84c;
+      margin-bottom: 15px;
+      display: inline-block;
+      animation: floatEagle 4s ease-in-out infinite;
+    }
+
+    @keyframes floatEagle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .hero h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.8rem;
+      color: #c9a84c;
+      letter-spacing: 2px;
+      text-shadow: 0 0 40px rgba(201, 168, 76, 0.08);
+    }
+
+    .hero .sub {
+      font-size: 0.8rem;
+      color: #b0a090;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      font-weight: 300;
+      margin-top: 5px;
+    }
+
+    .hero .motto {
+      font-size: 1rem;
+      font-style: italic;
+      color: #d4c5a0;
+      max-width: 500px;
+      margin: 25px auto 0;
+      padding: 16px 0;
+      border-top: 1px solid rgba(201, 168, 76, 0.1);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+      font-weight: 300;
+    }
+
+    .hero .motto i {
+      color: #c9a84c;
+      margin: 0 8px;
+    }
+
+    /* ===== CARD GRID ===== */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: rgba(20, 12, 8, 0.6);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      border: 1px solid rgba(201, 168, 76, 0.06);
+      padding: 28px 18px;
+      text-align: center;
+      transition: 0.4s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(201, 168, 76, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .card .icon {
+      font-size: 2.2rem;
+      color: #c9a84c;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+      color: #f5f0e8;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 0.8rem;
+      color: #b0a090;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .card .btn-gold {
+      background: linear-gradient(135deg, #c9a84c, #a88830);
+      border: none;
+      color: #0d0806;
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 8px 20px;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card .btn-gold:hover {
+      transform: scale(1.04);
+      box-shadow: 0 6px 20px rgba(201, 168, 76, 0.15);
+    }
+
+    /* ===== COUPLE ===== */
+    .couple-special {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 10px;
+    }
+
+    .couple-special .card {
+      padding: 25px 15px;
+    }
+
+    .couple-special .card .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 12px;
+      border: 3px solid #c9a84c;
+      box-shadow: 0 0 30px rgba(201, 168, 76, 0.05);
+    }
+
+    .couple-special .card .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .couple-special .card .name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+      color: #c9a84c;
+    }
+
+    .couple-special .card .role {
+      font-size: 0.65rem;
+      color: #b0a090;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* ===== FORM ===== */
+    .form-group {
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+      color: #d4c5a0;
+    }
+
+    .form-group label i {
+      color: #c9a84c;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(20, 12, 8, 0.5);
+      border: 1px solid rgba(201, 168, 76, 0.06);
+      border-radius: 16px;
+      color: #f5f0e8;
+      font-size: 0.85rem;
+      outline: none;
+      transition: 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #c9a84c;
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.04);
+      background: rgba(20, 12, 8, 0.7);
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    /* ===== BACK LINK ===== */
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.75rem;
+      color: #5a4a3a;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .back-link:hover {
+      color: #c9a84c;
+    }
+
+    .back-link i {
+      margin-right: 6px;
+    }
+
+    .credit {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.6rem;
+      color: #2a1a0a;
+      border-top: 1px solid rgba(201, 168, 76, 0.03);
+      padding-top: 20px;
+    }
+
+    .credit i {
+      color: #c9a84c;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2.6rem; }
+      .couple-special { grid-template-columns: 1fr; }
+      .navbar { flex-direction: column; align-items: center; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- HAMBURGER MENU -->
-<div class="menu-toggle" onclick="toggleMenu()">
-  <i class="fas fa-bars"></i>
-</div>
-
-<!-- SIDE MENU -->
-<div id="sideMenu" class="side-menu">
-  <div class="menu-header">
-    <span>XNR MENU</span>
-    <span class="menu-close" onclick="toggleMenu()">&times;</span>
-  </div>
-  <div class="menu-items">
-    <div class="menu-item" onclick="claimAmPrem()">
-      <i class="fas fa-gift"></i> Claim AM Prem Free
-    </div>
-    <div class="menu-item" onclick="penciptaWeb()">
-      <i class="fas fa-code"></i> Pencipta Web
-    </div>
-    <div class="menu-item" onclick="tentangXnr()">
-      <i class="fas fa-info-circle"></i> Tentang XNR
-    </div>
-  </div>
-</div>
-
-<!-- OVERLAY -->
-<div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
-
-<audio id="bgAudio" src="musikxputz.mp3" loop preload="auto"></audio>
+<div class="bg-eagle"></div>
 
 <div class="container">
 
-  <!-- HOME -->
+  <!-- ===== NAVBAR ===== -->
+  <div class="navbar">
+    <div class="brand"><i class="fas fa-crown"></i> Eagle`s Clan</div>
+    <div class="nav-links">
+      <a href="#" class="active" onclick="showPage('homePage')">Home</a>
+      <a href="#" onclick="showPage('aboutPage')">Tentang</a>
+      <a href="#" onclick="showPage('memberPage')">Anggota</a>
+      <a href="#" onclick="showPage('seleksiPage')">Seleksi</a>
+    </div>
+  </div>
+
+  <!-- ===== HOME ===== -->
   <div id="homePage" class="page active">
-    <div class="home-content">
-      <div class="logo-container" id="logoHome">
-        <img src="logoxnr.png" alt="XNR">
-      </div>
-      <div class="subtitle"><i class="fas fa-star"></i> Official Selection <i class="fas fa-star"></i></div>
-      <div class="judul-home">XNR SELECTION</div>
+    <div class="hero">
+      <div class="logo-icon"><i class="fas fa-crown"></i></div>
+      <h1>Eagle`s Clan</h1>
+      <div class="sub">Official Selection</div>
       <div class="motto">
-        <i class="fas fa-water"></i>
-        "dua tiga buah kedondong xnr nih bos senggol dong"
-        <i class="fas fa-water"></i>
+        <i class="fas fa-quote-left"></i>
+        "Kejayaan bukan datang sendiri, tetapi dibangun bersama."
+        <i class="fas fa-quote-right"></i>
       </div>
+    </div>
 
-      <!-- ADMIN CARD LIST -->
-      <div class="admin-section">
-        <h2><i class="fas fa-users"></i> ADMIN MARGA XNR</h2>
-        <div class="admin-grid">
-
-          <!-- KAYEYE -->
-          <div class="admin-card" onclick="bukaTentangAdmin('kayeye')">
-            <div class="admin-avatar">
-              <img src="kayeye.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=K'">
-            </div>
-            <div class="admin-info">
-              <div class="admin-name">KAYEYE</div>
-              <div class="admin-role"><i class="fas fa-crown"></i> Owner</div>
-              <div class="admin-detail"><i class="fas fa-map-marker-alt"></i> Jabar • sejak XNR berdiri</div>
-            </div>
-          </div>
-
-          <!-- XION -->
-          <div class="admin-card" onclick="bukaTentangAdmin('xion')">
-            <div class="admin-avatar">
-              <img src="xion.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=X'">
-            </div>
-            <div class="admin-info">
-              <div class="admin-name">XION</div>
-              <div class="admin-role"><i class="fas fa-user"></i> Admin</div>
-              <div class="admin-detail"><i class="fas fa-map-marker-alt"></i> Jatim • 2 bulan di XNR</div>
-            </div>
-          </div>
-
-          <!-- REYIZ -->
-          <div class="admin-card" onclick="bukaTentangAdmin('reyiz')">
-            <div class="admin-avatar">
-              <img src="reyiz.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=R'">
-            </div>
-            <div class="admin-info">
-              <div class="admin-name">REYIZ</div>
-              <div class="admin-role"><i class="fas fa-user"></i> Admin</div>
-              <div class="admin-detail"><i class="fas fa-map-marker-alt"></i> Jabar • 4 bulan di XNR</div>
-            </div>
-          </div>
-
-          <!-- VOLTAR -->
-          <div class="admin-card" onclick="bukaTentangAdmin('voltar')">
-            <div class="admin-avatar">
-              <img src="voltar.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=V'">
-            </div>
-            <div class="admin-info">
-              <div class="admin-name">VOLTAR</div>
-              <div class="admin-role"><i class="fas fa-user"></i> Admin</div>
-              <div class="admin-detail"><i class="fas fa-map-marker-alt"></i> Jateng • 5 bulan di XNR</div>
-            </div>
-          </div>
-
-          <!-- RASYID -->
-          <div class="admin-card" onclick="bukaTentangAdmin('rasyid')">
-            <div class="admin-avatar">
-              <img src="rasyid.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=R'">
-            </div>
-            <div class="admin-info">
-              <div class="admin-name">RASYID</div>
-              <div class="admin-role"><i class="fas fa-user"></i> Admin</div>
-              <div class="admin-detail"><i class="fas fa-map-marker-alt"></i> Kalimantan • sejak XNR berdiri</div>
-            </div>
-          </div>
-
-          <!-- MARVEL -->
-          <div class="admin-card" onclick="bukaTentangAdmin('marvel')">
-            <div class="admin-avatar">
-              <img src="marvel.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=M'">
-            </div>
-            <div class="admin-info">
-              <div class="admin-name">MARVEL</div>
-              <div class="admin-role"><i class="fas fa-user"></i> Admin</div>
-              <div class="admin-detail"><i class="fas fa-map-marker-alt"></i> Jabar • 2 bulan di XNR</div>
-            </div>
-          </div>
-
-          <!-- RAUL (ADMIN TERAKHIR) -->
-          <div class="admin-card last-admin" onclick="bukaTentangAdmin('raul')">
-            <div class="admin-avatar">
-              <img src="raul.jpg" alt="mata anime" onerror="this.src='https://placehold.co/60x60/0a2a4a/38bdf8?text=R'">
-            </div>
-            <div class="admin-info">
-              <div class="admin-name">RAUL</div>
-              <div class="admin-role"><i class="fas fa-laptop-code"></i> Handler Web & Admin</div>
-              <div class="admin-detail"><i class="fas fa-map-marker-alt"></i> Jabar • 1 bulan di XNR</div>
-            </div>
-          </div>
-
-        </div>
+    <div class="card-grid">
+      <div class="card" onclick="showPage('aboutPage')">
+        <div class="icon"><i class="fas fa-info-circle"></i></div>
+        <h3>Tentang</h3>
+        <p>Kenali lebih dekat Eagle`s Clan</p>
+        <div class="btn-gold"><i class="fas fa-arrow-right"></i> Lihat</div>
       </div>
-
-      <!-- TOMBOL LANJUTKAN -->
-      <button class="btn-primary" onclick="showPage('syaratPage')">
-        <i class="fas fa-arrow-right"></i> LANJUTKAN PENDAFTARAN
-      </button>
-
-      <div class="tahun-marga"><i class="fas fa-calendar-alt"></i> BERDIRI SEJAK 2024</div>
+      <div class="card" onclick="showPage('memberPage')">
+        <div class="icon"><i class="fas fa-users"></i></div>
+        <h3>Anggota</h3>
+        <p>Para pendiri & pengurus</p>
+        <div class="btn-gold"><i class="fas fa-arrow-right"></i> Lihat</div>
+      </div>
+      <div class="card" onclick="showPage('seleksiPage')">
+        <div class="icon"><i class="fas fa-clipboard-list"></i></div>
+        <h3>Seleksi</h3>
+        <p>Gabung menjadi anggota</p>
+        <div class="btn-gold"><i class="fas fa-arrow-right"></i> Daftar</div>
+      </div>
     </div>
   </div>
 
-  <!-- SYARAT -->
-  <div id="syaratPage" class="page">
-    <div class="header">
-      <h1><i class="fas fa-clipboard-list"></i> SYARAT MASUK XNR</h1>
-      <div class="sub"><i class="fab fa-tiktok"></i> Verifikasi TikTok</div>
+  <!-- ===== TENTANG ===== -->
+  <div id="aboutPage" class="page">
+    <div style="text-align:center; margin-bottom:20px;">
+      <h2 style="font-family:'Great Vibes',cursive; font-size:2.4rem; color:#c9a84c;">Tentang</h2>
+      <p style="color:#b0a090; font-size:0.75rem; letter-spacing:2px;">Eagle`s Clan</p>
     </div>
-
-    <div class="syarat-box">
-      <h3><i class="fas fa-pen-fancy"></i> Persyaratan Wajib</h3>
-      <div class="syarat-item">
-        <p><i class="fas fa-user-tag"></i> <strong>1. Format Nama TikTok</strong></p>
-        <p>Nama TikTok kamu HARUS mengandung salah satu format berikut:</p>
-        <div class="nama-contoh"><i class="fas fa-star"></i> —𝑵𝒂𝒎𝒂 𝒇𝒕 𝑿𝑵𝑹<br><i class="fas fa-star"></i> —𝑵𝒂𝒎𝒂𝑿𝑵𝑹</div>
-        <p style="font-size:0.8rem; color:#6a8aaa;">Contoh: —𝐊𝐲𝐲𝐲𝐲 𝐟𝐭 𝐗𝐍𝐑 atau —𝐊𝐲𝐲𝐲𝐲𝐗𝐍𝐑</p>
-      </div>
-      <div class="syarat-item">
-        <p><i class="fas fa-hashtag"></i> <strong>2. Posting Video</strong></p>
-        <p>Wajib membuat 1 video dengan hashtag:</p>
-        <div><span class="tagar">#margaxnr</span></div>
-        <p style="font-size:0.8rem; color:#6a8aaa;">Video bebas kontennya, yang penting pakai tagar #margaxnr!</p>
-      </div>
+    <div class="card" style="max-width:500px; margin:0 auto;">
+      <div class="icon"><i class="fas fa-crown"></i></div>
+      <p style="color:#d4c5a0; line-height:1.8; margin-bottom:15px;">
+        Eagle`s Clan adalah komunitas eksklusif yang didirikan untuk menjunjung tinggi nilai kehormatan, persaudaraan, dan prestasi. Kami adalah keluarga bagi mereka yang berani bermimpi dan berani melangkah.
+      </p>
+      <p style="font-size:0.8rem; color:#8a7a6a;">
+        <i class="fas fa-map-pin" style="color:#c9a84c;"></i> Berbasis di Indonesia
+      </p>
     </div>
-
-    <div class="form-group">
-      <label><i class="fab fa-tiktok"></i> Username TikTok Kamu</label>
-      <input type="text" id="tiktokUsername" placeholder="@usernamekamu">
-    </div>
-
-    <div class="checkbox-group">
-      <input type="checkbox" id="checkNama">
-      <label> Saya sudah mengubah nama TikTok sesuai format XNR</label>
-    </div>
-    <div class="checkbox-group">
-      <input type="checkbox" id="checkPosting">
-      <label> Saya sudah posting video dengan tagar #margaxnr</label>
-    </div>
-
-    <button class="btn-secondary" id="verifikasiBtn" disabled onclick="verifikasi()">
-      <i class="fas fa-check-circle"></i> VERIFIKASI & LANJUTKAN
-    </button>
-
-    <div class="back-link" onclick="showPage('homePage')">
-      <i class="fas fa-arrow-left"></i> Kembali ke Beranda
-    </div>
-    <div class="credit"><i class="fas fa-copyright"></i> 2025 • XNR Selection</div>
+    <div class="back-link" onclick="showPage('homePage')"><i class="fas fa-arrow-left"></i> Kembali</div>
   </div>
 
-  <!-- SELECTION -->
-  <div id="selectionPage" class="page">
-    <div class="header">
-      <h1><i class="fas fa-water"></i> XNR SELECTION</h1>
-      <div class="sub"><i class="fas fa-bolt"></i> Daftar Sekarang</div>
+  <!-- ===== ANGGOTA ===== -->
+  <div id="memberPage" class="page">
+    <div style="text-align:center; margin-bottom:20px;">
+      <h2 style="font-family:'Great Vibes',cursive; font-size:2.4rem; color:#c9a84c;">Anggota</h2>
+      <p style="color:#b0a090; font-size:0.75rem; letter-spacing:2px;">Pengurus</p>
     </div>
-
-    <div class="form-group">
-      <label><i class="fas fa-user-ninja"></i> 1. Nama Lengkap</label>
-      <input type="text" id="nama" placeholder="ex: Arka Veyron">
-    </div>
-    <div class="form-group">
-      <label><i class="fas fa-calendar-alt"></i> 2. Umur</label>
-      <input type="text" id="umur" placeholder="19 / 22 / 27">
-    </div>
-    <div class="form-group">
-      <label><i class="fas fa-fist-raised"></i> 3. Alasan Masuk XNR</label>
-      <textarea id="alasan" rows="2" placeholder="Cari kekuatan, membangun kolaborasi..."></textarea>
-    </div>
-    <div class="form-group">
-      <label><i class="fas fa-link"></i> 4. Double Marga ?</label>
-      <div class="double-option">
-        <label><input type="radio" name="doubleMarga" value="yes"> Ya, Double Marga</label>
-        <label><input type="radio" name="doubleMarga" value="no" checked> Tidak</label>
+    <div class="couple-special">
+      <div class="card">
+        <div class="avatar"><img src="https://placehold.co/100x100/1a0e08/c9a84c?text=R" alt="Raul"></div>
+        <div class="name">Raul</div>
+        <div class="role">Founder</div>
+      </div>
+      <div class="card">
+        <div class="avatar"><img src="https://placehold.co/100x100/1a0e08/c9a84c?text=K" alt="Kayeye"></div>
+        <div class="name">Kayeye</div>
+        <div class="role">Co-Founder</div>
+      </div>
+      <div class="card">
+        <div class="avatar"><img src="https://placehold.co/100x100/1a0e08/c9a84c?text=Y" alt="Yonz"></div>
+        <div class="name">Yonz</div>
+        <div class="role">Admin</div>
+      </div>
+      <div class="card">
+        <div class="avatar"><img src="https://placehold.co/100x100/1a0e08/c9a84c?text=N" alt="Novva"></div>
+        <div class="name">Novva</div>
+        <div class="role">Admin</div>
       </div>
     </div>
-    <div class="form-group">
-      <label><i class="fas fa-tree"></i> 5. Marga Sebelum XNR</label>
-      <input type="text" id="margaAsal" placeholder="Contoh: kgn, nca, wangy">
-    </div>
-    <div class="form-group">
-      <label><i class="fas fa-map-marker-alt"></i> 6. Asal Daerah</label>
-      <input type="text" id="asal" placeholder="Contoh: Jawa Barat, Jawa Tengah">
-    </div>
-    <div class="form-group">
-      <label><i class="fab fa-tiktok"></i> Username TikTok</label>
-      <input type="text" id="tiktokFinal" readonly style="background:rgba(0,30,60,0.3); color:#7dd3fc; border:1px solid rgba(56,189,248,0.08); border-radius:16px; padding:12px 16px; width:100%;">
-    </div>
-
-    <button class="btn-primary" id="btnSeleksi">
-      <i class="fas fa-paper-plane"></i> DAFTAR SEKARANG
-    </button>
-
-    <div class="back-link" onclick="showPage('syaratPage')">
-      <i class="fas fa-arrow-left"></i> Kembali ke Syarat
-    </div>
-    <div class="credit"><i class="fas fa-copyright"></i> 2025 • XNR Selection</div>
+    <div class="back-link" onclick="showPage('homePage')"><i class="fas fa-arrow-left"></i> Kembali</div>
   </div>
 
-  <!-- HALAMAN TENTANG ADMIN -->
-  <div id="tentangAdminPage" class="page">
-    <div class="header">
-      <div class="logo-container" id="logoAbout" style="width: 160px; height: 160px; margin: 0 auto 15px; border-radius: 40px; overflow: hidden; border: 3px solid #0ea5e9; box-shadow: 0 0 50px rgba(14, 165, 233, 0.3); transition: all 0.5s ease;">
-        <img src="logoxnr.png" alt="XIONARA">
+  <!-- ===== SELEKSI ===== -->
+  <div id="seleksiPage" class="page">
+    <div style="text-align:center; margin-bottom:20px;">
+      <h2 style="font-family:'Great Vibes',cursive; font-size:2.4rem; color:#c9a84c;">Seleksi</h2>
+      <p style="color:#b0a090; font-size:0.75rem; letter-spacing:2px;">Gabung Sekarang</p>
+    </div>
+    <div class="card" style="max-width:500px; margin:0 auto;">
+      <div class="icon"><i class="fas fa-user-plus"></i></div>
+      <div class="form-group">
+        <label><i class="fas fa-user"></i> Nama Lengkap</label>
+        <input type="text" id="nama" placeholder="Nama Anda">
       </div>
-      <h1 style="font-family: 'Orbitron', sans-serif; font-size: 1.8rem; color: #7dd3fc; text-shadow: 0 0 30px rgba(56, 189, 248, 0.2);"><i class="fas fa-crown"></i> LEADER XIONARA</h1>
-      <div style="font-size: 0.8rem; color: #6a9fc9; margin-top: 5px;"><i class="fas fa-info-circle"></i> Tentang Admin</div>
+      <div class="form-group">
+        <label><i class="fas fa-calendar-alt"></i> Umur</label>
+        <input type="text" id="umur" placeholder="19 / 22 / 27">
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-pen-fancy"></i> Skill / Keahlian</label>
+        <input type="text" id="skill" placeholder="Editor / Desainer / Gamer">
+      </div>
+      <button class="btn-gold" id="btnDaftar" style="width:100%; justify-content:center;"><i class="fas fa-paper-plane"></i> DAFTAR SEKARANG</button>
     </div>
-
-    <div id="adminDetailContainer" style="background: rgba(0, 40, 80, 0.2); border-radius: 24px; padding: 25px; border: 1px solid rgba(56, 189, 248, 0.1);">
-      <!-- Isi akan diisi oleh JavaScript -->
-    </div>
-
-    <div class="back-link" onclick="showPage('homePage')" style="margin-top: 20px;">
-      <i class="fas fa-arrow-left"></i> Kembali ke Beranda
-    </div>
-    <div class="credit"><i class="fas fa-copyright"></i> 2025 • XNR Selection</div>
+    <div class="back-link" onclick="showPage('homePage')"><i class="fas fa-arrow-left"></i> Kembali</div>
   </div>
 
+  <div class="credit"><i class="fas fa-copyright"></i> 2026 • Eagle`s Clan</div>
 </div>
 
-<!-- LOADING -->
-<div id="loadingOverlay" class="loading-overlay">
-  <div class="loading-spinner"></div>
-  <div class="loading-text"><i class="fas fa-hourglass-half"></i> SABAR, DATA SEDANG DIPROSES</div>
-  <div class="loading-sub">harap tunggu sebentar...</div>
-</div>
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    const map = { homePage: 0, aboutPage: 1, memberPage: 2, seleksiPage: 3 };
+    if (map[id] !== undefined) document.querySelectorAll('.nav-links a')[map[id]].classList.add('active');
+  }
 
-<script src="script.js"></script>
+  document.getElementById('btnDaftar').addEventListener('click', function() {
+    const nama = document.getElementById('nama').value.trim();
+    const umur = document.getElementById('umur').value.trim();
+    const skill = document.getElementById('skill').value.trim();
+    if (!nama || !umur || !skill) return alert('Isi semua data!');
+    alert('Terima kasih, ' + nama + '!\nPendaftaran Anda telah diterima.\nTim Eagle`s Clan akan menghubungi Anda.');
+    document.getElementById('nama').value = '';
+    document.getElementById('umur').value = '';
+    document.getElementById('skill').value = '';
+  });
+
+  console.log('🦅 Eagle`s Clan siap!');
+</script>
+
 </body>
-  </html>
+</html>
