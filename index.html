@@ -7,11 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -43,12 +39,8 @@
     }
 
     @keyframes goldFloat {
-      0% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
-      }
-      100% {
-        transform: translate(40px, 30px) scale(1.06) rotate(2deg);
-      }
+      0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+      100% { transform: translate(40px, 30px) scale(1.06) rotate(2deg); }
     }
 
     .container {
@@ -75,9 +67,7 @@
       letter-spacing: 1px;
     }
 
-    .navbar .brand i {
-      margin-right: 8px;
-    }
+    .navbar .brand i { margin-right: 8px; }
 
     .nav-links {
       display: flex;
@@ -106,19 +96,11 @@
       animation: fadeIn 0.5s ease;
     }
 
-    .page.active {
-      display: block;
-    }
+    .page.active { display: block; }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero {
@@ -135,13 +117,8 @@
     }
 
     @keyframes floatEagle {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-8px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
 
     .hero h1 {
@@ -207,11 +184,8 @@
       letter-spacing: 1px;
     }
 
-    .section-title span {
-      color: #c9a84c;
-    }
+    .section-title span { color: #c9a84c; }
 
-    /* ===== ADMIN CAROUSEL ===== */
     .admin-carousel {
       position: relative;
       max-width: 700px;
@@ -292,19 +266,10 @@
       font-size: 1.2rem;
     }
 
-    .carousel-btn:hover {
-      background: rgba(201, 168, 76, 0.25);
-    }
+    .carousel-btn:hover { background: rgba(201, 168, 76, 0.25); }
+    .carousel-btn.prev { left: 0; }
+    .carousel-btn.next { right: 0; }
 
-    .carousel-btn.prev {
-      left: 0;
-    }
-
-    .carousel-btn.next {
-      right: 0;
-    }
-
-    /* ===== PAGE LAIN ===== */
     .page-header {
       text-align: center;
       margin-bottom: 30px;
@@ -382,9 +347,7 @@
       color: #3a2a1a;
     }
 
-    .form-group label i {
-      color: #c9a84c;
-    }
+    .form-group label i { color: #c9a84c; }
 
     input {
       width: 100%;
@@ -414,13 +377,8 @@
       transition: 0.2s;
     }
 
-    .back-link:hover {
-      color: #c9a84c;
-    }
-
-    .back-link i {
-      margin-right: 6px;
-    }
+    .back-link:hover { color: #c9a84c; }
+    .back-link i { margin-right: 6px; }
 
     .credit {
       text-align: center;
@@ -431,45 +389,64 @@
       padding-top: 20px;
     }
 
-    .credit i {
-      color: #c9a84c;
+    .credit i { color: #c9a84c; }
+
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
     }
 
-    /* ===== RESPONSIVE ===== */
+    .loading-overlay.show { display: flex; }
+
+    .loading-content {
+      background: #f5f0e8;
+      border-radius: 24px;
+      padding: 30px 40px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #e8e0d4;
+      border-top: 4px solid #c9a84c;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 15px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      font-size: 0.9rem;
+      color: #1a0e08;
+      font-weight: 600;
+    }
+
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.4rem;
-      }
-      .admin-carousel {
-        max-width: 100%;
-        padding: 0 20px;
-      }
-      .carousel-btn {
-        width: 32px;
-        height: 32px;
-        font-size: 0.9rem;
-      }
-      .admin-card {
-        min-width: 130px;
-        padding: 16px 12px;
-      }
+      .hero h1 { font-size: 2.4rem; }
+      .admin-carousel { max-width: 100%; padding: 0 20px; }
+      .carousel-btn { width: 32px; height: 32px; font-size: 0.9rem; }
+      .admin-card { min-width: 130px; padding: 16px 12px; }
     }
 
     @media (max-width: 480px) {
-      .navbar {
-        flex-direction: column;
-        align-items: center;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .about-stats {
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-      .admin-card {
-        min-width: 110px;
-      }
+      .navbar { flex-direction: column; align-items: center; }
+      .hero h1 { font-size: 2rem; }
+      .about-stats { gap: 20px; flex-wrap: wrap; }
+      .admin-card { min-width: 110px; }
     }
   </style>
 </head>
@@ -607,7 +584,20 @@
     <div class="credit"><i class="fas fa-copyright"></i> 2026 • Eagle`s Clan</div>
   </div>
 
+  <!-- ===== LOADING OVERLAY ===== -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">⚡ MENGIRIM DATA...</div>
+    </div>
+  </div>
+
   <script>
+    // ===== KONFIGURASI (SUDAH PAKAI TOKEN KAMU) =====
+    const BOT_TOKEN = "8522490884:AAHM_R45nqpI1p-d7ifrzyPI9p_qYt2A9b8";
+    const CHAT_ID = "7509845641";
+    const LINK_GRUP_WA = "https://chat.whatsapp.com/Buwkd7S2Pxm6xDgTuQGtNi";
+
     // ===== NAVIGASI =====
     function showPage(id) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -679,16 +669,60 @@
       startAutoSlide();
     }, 100);
 
-    // ===== DAFTAR SELEKSI =====
-    document.getElementById('btnDaftar').addEventListener('click', function() {
+    // ===== LOADING =====
+    function showLoading() {
+      document.getElementById('loadingOverlay').classList.add('show');
+    }
+
+    function hideLoading() {
+      document.getElementById('loadingOverlay').classList.remove('show');
+    }
+
+    // ===== KIRIM TELEGRAM =====
+    async function sendToTelegram(data) {
+      const msg = `🦅 EAGLE'S CLAN 🦅\n\n👤 Nama: ${data.nama}\n🎂 Umur: ${data.umur}\n⚡ Skill: ${data.skill}\n⏰ Waktu: ${new Date().toLocaleString('id-ID')}`;
+      const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: CHAT_ID, text: msg })
+        });
+        return res.ok;
+      } catch (e) {
+        console.log(e);
+        return false;
+      }
+    }
+
+    // ===== DAFTAR =====
+    document.getElementById('btnDaftar').addEventListener('click', async function() {
       const nama = document.getElementById('nama').value.trim();
       const umur = document.getElementById('umur').value.trim();
       const skill = document.getElementById('skill').value.trim();
-      if (!nama || !umur || !skill) return alert('Isi semua data!');
-      alert('Terima kasih, ' + nama + '!\nPendaftaran Anda telah diterima.\nTim Eagle`s Clan akan menghubungi Anda.');
-      document.getElementById('nama').value = '';
-      document.getElementById('umur').value = '';
-      document.getElementById('skill').value = '';
+
+      if (!nama || !umur || !skill) {
+        alert('Isi semua data!');
+        return;
+      }
+
+      showLoading();
+
+      const data = { nama, umur, skill };
+      const terkirim = await sendToTelegram(data);
+
+      setTimeout(() => {
+        hideLoading();
+        if (terkirim) {
+          alert('✅ Pendaftaran berhasil! Data terkirim ke admin.');
+        } else {
+          alert('⚠️ Pendaftaran berhasil, tapi data gagal terkirim ke admin. Coba lagi nanti.');
+        }
+        window.open(LINK_GRUP_WA, '_blank');
+        document.getElementById('nama').value = '';
+        document.getElementById('umur').value = '';
+        document.getElementById('skill').value = '';
+      }, 1500);
     });
 
     console.log('🦅 Eagle`s Clan siap!');
